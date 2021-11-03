@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Course-Online</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet,\n consec telur adipiscing elit</string>
 </resources>

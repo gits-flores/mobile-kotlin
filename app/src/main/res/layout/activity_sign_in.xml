@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".login_register.SignInActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="125dp"
+            android:src="@drawable/blank_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_descApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/dummy_text"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_btn"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descApp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/blue_lagoon"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            android:text="Login with Gmail"
+            android:fontFamily="@font/poppins_regular"
+            android:textAllCaps="false"
+            app:icon="@drawable/email_icon"
+            app:iconGravity="textStart"/>
+
+        <LinearLayout
+            android:id="@+id/tosignUp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? "
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:id="@+id/signUp_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Sign Up"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#2a9df4"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_policy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="100dp"
+            android:text="@string/dummy_text"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
