@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:id="@+id/iv_logo"
             android:layout_width="150dp"
@@ -17,7 +18,7 @@
             android:src="@drawable/blank_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_descApp"
@@ -26,49 +27,50 @@
             android:layout_marginTop="30dp"
             android:text="@string/dummy_text"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/iv_logo"/>
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login_btn"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_descApp"
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/blue_lagoon"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Login with Gmail"
+            android:textAllCaps="false"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
-            android:text="Login with Gmail"
-            android:fontFamily="@font/poppins_regular"
-            android:textAllCaps="false"
             app:icon="@drawable/email_icon"
-            app:iconGravity="textStart"/>
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descApp" />
 
         <LinearLayout
             android:id="@+id/tosignUp_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/login_btn"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Don't have an account? "
-                android:fontFamily="@font/poppins_regular"/>
+            app:layout_constraintTop_toBottomOf="@+id/login_btn">
 
             <TextView
-                android:id="@+id/signUp_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Sign Up"
                 android:fontFamily="@font/poppins_regular"
-                android:textColor="#2a9df4"
+                android:text="Don't have an account? " />
+
+            <TextView
+                android:id="@+id/signUp_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:clickable="true"
-                android:focusable="true" />
+                android:focusable="true"
+                android:fontFamily="@font/poppins_regular"
+                android:text=" Sign Up"
+                android:textColor="#2a9df4" />
         </LinearLayout>
 
         <TextView
@@ -78,7 +80,7 @@
             android:layout_marginVertical="100dp"
             android:text="@string/dummy_text"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout"/>
+            app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
