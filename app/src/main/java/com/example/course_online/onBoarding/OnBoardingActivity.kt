@@ -11,7 +11,7 @@ import com.example.course_online.R
 import com.example.course_online.login_register.SignInActivity
 import com.google.android.material.tabs.TabLayout
 
-class OnBoaerdingActivity : AppCompatActivity() {
+class OnBoardingActivity : AppCompatActivity() {
 
     var onBoardingViewPagerAdapter: ViewPagerAdapter? = null
     var tabLayout: TabLayout? = null
@@ -28,6 +28,7 @@ class OnBoaerdingActivity : AppCompatActivity() {
         if (restorePrefData()) {
             val intent = Intent(applicationContext, SignInActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         tabLayout = findViewById(R.id.tab_pager)
@@ -66,6 +67,7 @@ class OnBoaerdingActivity : AppCompatActivity() {
                 savePrefData()
                 val intent = Intent(applicationContext, SignInActivity::class.java)
                 startActivity(intent)
+                finish()
             }
         }
         tabLayout!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

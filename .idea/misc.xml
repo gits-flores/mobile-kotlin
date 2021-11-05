@@ -3,17 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/indicator_selector.xml" value="0.1259259259259259" />
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/selected.xml" value="0.1" />
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/unselected.xml" value="0.21614583333333334" />
         <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_on_boaerding.xml" value="0.25" />
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_sign_in.xml" value="0.22" />
         <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
-        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/onboardingscreen.xml" value="0.2" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/drawable/button_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_sign_in.xml" value="0.13333333333333333" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_sign_in.xml" value="0.16666666666666666" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
       </map>
     </option>

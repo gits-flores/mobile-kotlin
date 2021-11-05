@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
-            android:name=".onBoarding.OnBoaerdingActivity"
+            android:name=".onBoarding.OnBoardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,16 +19,21 @@
             </intent-filter>
 
         </activity>
+
         <activity
             android:name=".login_register.SignInActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:launchMode="singleTask">
+        </activity>
         <activity
             android:name=".login_register.SignUpActivity"
-            android:exported="true">
+            android:exported="false"
+            android:launchMode="singleTop">
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

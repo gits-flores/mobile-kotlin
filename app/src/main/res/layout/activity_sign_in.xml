@@ -14,8 +14,9 @@
             android:id="@+id/iv_logo"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="75dp"
             android:src="@drawable/blank_image"
+            android:transitionName="logoTransitions"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,26 +27,142 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/dummy_text"
+            android:transitionName="descTransitions"
             android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
-        <com.google.android.material.button.MaterialButton
+        <LinearLayout
+            android:id="@+id/form_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:transitionName="layoutTransition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_descApp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tb_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="32dp"
+                android:hint="Email"
+                app:boxStrokeColor="@color/grey"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_descApp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signIn_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/email_icon"
+                    android:drawableTint="@color/grey"
+                    android:lines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tb_pass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="30dp"
+                android:hint="Password"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tb_email">
+
+                <EditText
+                    android:id="@+id/signIn_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
             android:id="@+id/login_btn"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/blue_lagoon"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Login"
+            android:textSize="18dp"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/form_layout" />
+
+        <LinearLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn">
+
+            <View
+                style="@style/Divider"
+                android:layout_weight="1"
+                android:layout_marginLeft="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/grey"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Or"
+                android:textSize="14dp"
+                android:gravity="center"/>
+
+            <View
+                style="@style/Divider"
+                android:layout_weight="1"
+                android:layout_marginRight="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/grey"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginGmail_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="30dp"
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/blue_lagoon"
             android:fontFamily="@font/poppins_regular"
             android:text="Login with Gmail"
+            android:textSize="18dp"
             android:textAllCaps="false"
+            android:transitionName="btnTransitions"
             app:backgroundTint="@null"
             app:backgroundTintMode="@null"
             app:icon="@drawable/email_icon"
             app:iconGravity="textStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_descApp" />
+            app:layout_constraintTop_toBottomOf="@+id/divider"/>
 
         <LinearLayout
             android:id="@+id/tosignUp_layout"
@@ -54,7 +171,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/login_btn">
+            app:layout_constraintTop_toBottomOf="@+id/loginGmail_btn">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,7 +194,7 @@
             android:id="@+id/tv_policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="100dp"
+            android:layout_marginTop="32dp"
             android:text="@string/dummy_text"
             android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout" />
