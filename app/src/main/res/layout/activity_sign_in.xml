@@ -114,6 +114,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             android:weightSum="3"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login_btn">
@@ -160,6 +161,7 @@
             app:backgroundTintMode="@null"
             app:icon="@drawable/email_icon"
             app:iconGravity="textStart"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"/>
