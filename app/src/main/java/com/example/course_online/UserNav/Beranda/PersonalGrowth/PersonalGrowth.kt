@@ -1,4 +1,4 @@
-package com.example.course_online.PersonalGrowth
+package com.example.course_online.UserNav.Beranda.PersonalGrowth
 
 data class PersonalGrowth(
     var ImageMateri: Int,
