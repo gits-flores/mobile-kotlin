@@ -36,23 +36,23 @@ class OnBoardingActivity : AppCompatActivity() {
         val onBoardingData: MutableList<OnBoardingData> = arrayListOf()
         onBoardingData.add(
             OnBoardingData(
-                "Page One",
-                "Description of page one",
-                R.drawable.blank_image
+                "Pahami Diri Lebih Baik",
+                "Menembus rintangan untuk belajar dan menemukan potensi tersembunyi anda",
+                R.drawable.ic_onboard_one
             )
         )
         onBoardingData.add(
             OnBoardingData(
-                "Page Two",
-                "Description of page two",
-                R.drawable.blank_image
+                "Modul Berkualitas",
+                "Modul yang dibuat untuk membantu anda semakin memahami kepribadian anda",
+                R.drawable.ic_onboard_two
             )
         )
         onBoardingData.add(
             OnBoardingData(
-                "Page Three",
-                "Description of page three",
-                R.drawable.blank_image
+                "Jelajahi Fitur Menarik",
+                "Jelajahi berbagai fitur menarik seperti artikel survey dan fitur menarik lainnya",
+                R.drawable.ic_onboard_three
             )
         )
         setOnBoardingViewPagerAdapter(onBoardingData)
@@ -75,9 +75,9 @@ class OnBoardingActivity : AppCompatActivity() {
 
                 position = tab!!.position
                 if (tab.position == onBoardingData.size - 1) {
-                    next!!.text = "Get Started"
+                    next!!.text = "SELESAI"
                 } else {
-                    next!!.text = "Next"
+                    next!!.text = "LANJUT"
                 }
             }
 

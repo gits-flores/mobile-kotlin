@@ -14,10 +14,10 @@
 
 
     <RelativeLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_pager"
@@ -25,18 +25,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             app:tabBackground="@drawable/indicator_selector"
-            app:tabIndicatorHeight="0dp"/>
+            app:tabIndicatorHeight="0dp" />
 
         <TextView
             android:id="@+id/tv_next"
-            android:textColor="@color/teal_700"
-            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
-            android:layout_alignParentRight="true"
-            android:text="Next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:text="LANJUT"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </RelativeLayout>
