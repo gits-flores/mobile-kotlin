@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
-            android:name=".PersonalGrowth.PersoanlGrowtActivity"
+            android:name="com.example.course_online.UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity"
             android:exported="true" />
         <activity
             android:name=".onBoarding.OnBoardingActivity"

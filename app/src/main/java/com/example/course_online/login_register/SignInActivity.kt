@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Pair
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.course_online.MainActivity
-import com.example.course_online.PersonalGrowth.PersoanlGrowtActivity
-import com.example.course_online.PersonalGrowth.PersonalGrowth
+import com.example.course_online.UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity
 import com.example.course_online.R
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -40,7 +38,7 @@ class SignInActivity : AppCompatActivity() {
         descApp = findViewById(R.id.tv_descApp)
 
         tv_policy.setOnClickListener {
-            startActivity(Intent(this, PersoanlGrowtActivity::class.java))
+            startActivity(Intent(this, PersonalGrowtActivity::class.java))
         }
 
         loginBtn.setOnClickListener {

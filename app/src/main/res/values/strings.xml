@@ -5,4 +5,7 @@
     <string name="jelajahi_ciri_ciri_kepribadian_anda_dan_pelajari_cara_mengembangkan_untuk_tumbuh_sebagai_pribadi_yang_lebih_baik">Jelajahi ciri-ciri kepribadian Anda dan pelajari cara mengembangkan untuk tumbuh sebagai pribadi yang lebih baik.</string>
     <string name="module_bermasalah">Module Bermasalah ?</string>
     <string name="mulai">MULAI</string>
-</resources>
+    <string name="dummyTextParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nunc massa, vestibulum ut orci at, varius ornare purus. Aliquam erat volutpat. Mauris elementum sit amet est placerat vestibulum. Aenean magna turpis, consectetur nec vulputate eget, mollis id nibh. Donec venenatis iaculis augue, in blandit neque posuere convallis. Pellentesque facilisis maximus nunc non luctus. Aliquam sollicitudin luctus blandit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    </resources>
