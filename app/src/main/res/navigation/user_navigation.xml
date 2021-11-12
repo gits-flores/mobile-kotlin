@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.course_online.UserNav.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/jelajahiFragment"
+        android:name="com.example.course_online.UserNav.JelajahiFragment"
+        android:label="fragment_jelajahi"
+        tools:layout="@layout/fragment_jelajahi" />
+    <fragment
+        android:id="@+id/simpanFragment"
+        android:name="com.example.course_online.UserNav.SimpanFragment"
+        android:label="fragment_simpan"
+        tools:layout="@layout/fragment_simpan" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.course_online.UserNav.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
