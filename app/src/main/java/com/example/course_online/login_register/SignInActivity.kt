@@ -8,16 +8,19 @@ import android.util.Pair
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.course_online.MainActivity
+import com.example.course_online.PersonalGrowth.PersoanlGrowtActivity
+import com.example.course_online.PersonalGrowth.PersonalGrowth
 import com.example.course_online.R
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
 
-    private lateinit var formLayout : LinearLayout
-    private lateinit var loginBtn : Button
-    private lateinit var gmailLoginBtn : Button
-    private lateinit var signUpBtn : TextView
-    private lateinit var logoApp : ImageView
-    private lateinit var descApp : TextView
+    private lateinit var formLayout: LinearLayout
+    private lateinit var loginBtn: Button
+    private lateinit var gmailLoginBtn: Button
+    private lateinit var signUpBtn: TextView
+    private lateinit var logoApp: ImageView
+    private lateinit var descApp: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +39,10 @@ class SignInActivity : AppCompatActivity() {
         logoApp = findViewById(R.id.iv_logo)
         descApp = findViewById(R.id.tv_descApp)
 
+        tv_policy.setOnClickListener {
+            startActivity(Intent(this, PersoanlGrowtActivity::class.java))
+        }
+
         loginBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -44,7 +51,7 @@ class SignInActivity : AppCompatActivity() {
         signUpBtn.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
 
-            val options =  ActivityOptions.makeSceneTransitionAnimation(
+            val options = ActivityOptions.makeSceneTransitionAnimation(
                 this,
                 Pair.create(logoApp, "logoTransitions"),
                 Pair.create(descApp, "descTransitions"),

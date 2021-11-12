@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Course-Online</string>
     <string name="dummy_text">Lorem ipsum dolor sit amet,\n consec telur adipiscing elit</string>
+    <string name="personal_growth">Personal Growth</string>
+    <string name="jelajahi_ciri_ciri_kepribadian_anda_dan_pelajari_cara_mengembangkan_untuk_tumbuh_sebagai_pribadi_yang_lebih_baik">Jelajahi ciri-ciri kepribadian Anda dan pelajari cara mengembangkan untuk tumbuh sebagai pribadi yang lebih baik.</string>
+    <string name="module_bermasalah">Module Bermasalah ?</string>
+    <string name="mulai">MULAI</string>
 </resources>

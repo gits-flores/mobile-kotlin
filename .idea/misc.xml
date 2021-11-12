@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/bg_img_materi.xml" value="0.21614583333333334" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/ic_back.xml" value="0.21614583333333334" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/drawable/ic_onboard_one.xml" value="0.21614583333333334" />
         <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_on_boaerding.xml" value="0.2" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_persoanl_growt.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Android/AndroidProject/CourseOnline/app/src/main/res/layout/item_personal_growth.xml" value="0.33" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/drawable/button_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_sign_in.xml" value="0.16666666666666666" />
