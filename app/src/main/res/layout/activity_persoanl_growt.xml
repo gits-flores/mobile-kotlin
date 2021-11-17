@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E5E5"
-    tools:context=".UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity">
+    tools:context=".ui.PersonalGrowth.PersonalGrowtActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_personal"
@@ -13,115 +13,144 @@
         android:layout_height="?actionBarSize"
         android:background="@color/white">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="?actionBarSize">
 
             <ImageView
                 android:id="@+id/ic_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/ic_back"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/personal_growth"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_back"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toEndOf="@+id/ic_back"
+                app:layout_constraintTop_toTopOf="@+id/ic_back" />
 
             <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="14dp"
-                android:src="@drawable/ic_search" />
-        </RelativeLayout>
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+
+
+        <!--        </RelativeLayout>-->
     </androidx.appcompat.widget.Toolbar>
 
-    <RelativeLayout
-        android:id="@+id/rv_description"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tb_personal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="42dp">
+        android:layout_below="@id/tb_personal">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_pg"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/rv_description"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_semibold"
-                android:text="@string/personal_growth"
-                android:textColor="#36474F"
-                android:textSize="24sp" />
+                android:layout_below="@id/tb_personal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="42dp">
 
-            <TextView
-                android:id="@+id/tv_desc_ps"
-                android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_pg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/personal_growth"
+                        android:textColor="#36474F"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_desc_ps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_pg"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="@string/jelajahi_ciri_ciri_kepribadian_anda_dan_pelajari_cara_mengembangkan_untuk_tumbuh_sebagai_pribadi_yang_lebih_baik"
+                        android:textColor="#5D5F61"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/bermasalah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_desc_ps"
+                        android:layout_marginTop="11dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/module_bermasalah"
+                        android:textColor="#5D5F61"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/laporkan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_desc_ps"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_toRightOf="@id/bermasalah"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Laporkan"
+                        android:textColor="#1967D3"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/img_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_desc_ps"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_toRightOf="@+id/laporkan"
+                        android:src="@drawable/ic_report" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_personal_growth"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_pg"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/jelajahi_ciri_ciri_kepribadian_anda_dan_pelajari_cara_mengembangkan_untuk_tumbuh_sebagai_pribadi_yang_lebih_baik"
-                android:textColor="#5D5F61"
-                android:textSize="18sp" />
-
-
-            <TextView
-                android:id="@+id/bermasalah"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_desc_ps"
-                android:layout_marginTop="11dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="@string/module_bermasalah"
-                android:textColor="#5D5F61"
-                android:textSize="12dp" />
-
-            <TextView
-                android:id="@+id/laporkan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_desc_ps"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="11dp"
-                android:layout_toRightOf="@id/bermasalah"
-                android:fontFamily="@font/inter_regular"
-                android:text="Laporkan"
-                android:textColor="#1967D3"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/img_report"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_desc_ps"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="11dp"
-                android:layout_toRightOf="@+id/laporkan"
-                android:src="@drawable/ic_report" />
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_personal_growth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv_description"
-        android:layout_marginTop="62dp"
-        tools:listitem="@layout/item_personal_growth" />
+                android:layout_below="@id/rv_description"
+                android:layout_marginTop="62dp"
+                tools:listitem="@layout/item_personal_growth" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

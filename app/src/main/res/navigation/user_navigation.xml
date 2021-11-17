@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.course_online.UserNav.HomeFragment"
+        android:name="com.example.course_online.UserNav.Home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/jelajahiFragment"
-        android:name="com.example.course_online.UserNav.JelajahiFragment"
+        android:name="com.example.course_online.UserNav.Jelajah.JelajahiFragment"
         android:label="fragment_jelajahi"
         tools:layout="@layout/fragment_jelajahi" />
     <fragment
         android:id="@+id/simpanFragment"
-        android:name="com.example.course_online.UserNav.SimpanFragment"
+        android:name="com.example.course_online.UserNav.Simpan.SimpanFragment"
         android:label="fragment_simpan"
         tools:layout="@layout/fragment_simpan" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.course_online.UserNav.ProfileFragment"
+        android:name="com.example.course_online.UserNav.Profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

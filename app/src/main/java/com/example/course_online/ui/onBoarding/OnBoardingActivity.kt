@@ -1,4 +1,4 @@
-package com.example.course_online.onBoarding
+package com.example.course_online.ui.onBoarding
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.example.course_online.R
-import com.example.course_online.login_register.SignInActivity
+import com.example.course_online.ui.SignInActivity
 import com.google.android.material.tabs.TabLayout
 
 class OnBoardingActivity : AppCompatActivity() {

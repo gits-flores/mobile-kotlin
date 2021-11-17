@@ -1,4 +1,4 @@
-package com.example.course_online.UserNav
+package com.example.course_online.UserNav.Home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,6 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
-import com.example.course_online.UserNav.Beranda.AdapterModulPilihan
-import com.example.course_online.UserNav.Beranda.ModulPilihan
 
 class HomeFragment : Fragment() {
     private lateinit var modulRecyclerView: RecyclerView

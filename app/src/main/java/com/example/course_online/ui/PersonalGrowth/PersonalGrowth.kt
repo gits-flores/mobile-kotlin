@@ -1,4 +1,4 @@
-package com.example.course_online.UserNav.Beranda.PersonalGrowth
+package com.example.course_online.ui.PersonalGrowth
 
 data class PersonalGrowth(
     var ImageMateri: Int,
@@ -6,5 +6,4 @@ data class PersonalGrowth(
     var Judul: String,
     var Tim: String,
     var Status: String
-) {
-}
+)

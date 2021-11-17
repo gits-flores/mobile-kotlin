@@ -1,16 +1,11 @@
-package com.example.course_online.login_register
+package com.example.course_online.ui
 
-import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Pair
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.course_online.MainActivity
 import com.example.course_online.R
 
 class SignUpActivity : AppCompatActivity() {

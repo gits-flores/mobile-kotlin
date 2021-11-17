@@ -1,4 +1,4 @@
-package com.example.course_online.UserNav.Beranda
+package com.example.course_online.UserNav.Home
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.course_online.MainActivity
 import com.example.course_online.R
-import com.example.course_online.UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity
+import com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity
 
 class AdapterModulPilihan(private var  listModul: ArrayList<ModulPilihan>)
     : RecyclerView.Adapter<AdapterModulPilihan.myViewHolder>(){
@@ -40,7 +38,7 @@ class AdapterModulPilihan(private var  listModul: ArrayList<ModulPilihan>)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_modul, parent, false)
-        return AdapterModulPilihan.myViewHolder(itemView)
+        return myViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {

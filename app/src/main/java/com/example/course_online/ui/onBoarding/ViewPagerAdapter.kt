@@ -1,4 +1,4 @@
-package com.example.course_online.onBoarding
+package com.example.course_online.ui.onBoarding
 
 import android.content.Context
 import android.view.LayoutInflater

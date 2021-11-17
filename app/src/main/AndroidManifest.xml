@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
-            android:name="com.example.course_online.UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity"
+            android:name="com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity"
             android:exported="true" />
         <activity
-            android:name=".onBoarding.OnBoardingActivity"
+            android:name=".ui.onBoarding.OnBoardingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login_register.SignInActivity"
+            android:name=".ui.SignInActivity"
             android:exported="true"
             android:launchMode="singleTask"></activity>
         <activity
-            android:name=".login_register.SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:exported="false"
             android:launchMode="singleTop"></activity>
         <activity

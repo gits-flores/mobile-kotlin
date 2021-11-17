@@ -1,4 +1,4 @@
-package com.example.course_online.UserNav.Beranda.PersonalGrowth
+package com.example.course_online.ui.PersonalGrowth
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.example.course_online.UserNav.Beranda
+package com.example.course_online.UserNav.Home
 
 class ModulPilihan(
     var imageModul : Int,

@@ -1,4 +1,4 @@
-package com.example.course_online.login_register
+package com.example.course_online.ui
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.util.Pair
 import android.widget.*
 import com.example.course_online.MainActivity
-import com.example.course_online.UserNav.Beranda.PersonalGrowth.PersonalGrowtActivity
 import com.example.course_online.R
+import com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
