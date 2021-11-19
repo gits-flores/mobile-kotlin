@@ -16,7 +16,7 @@ class AdapterSurvey (private var  listSavedSurvey: ArrayList<Survey>)
         val image: ImageView = itemView.findViewById(R.id.img_survey)
         val judul: TextView = itemView.findViewById(R.id.tv_judul_survey)
         val author: TextView = itemView.findViewById(R.id.tv_author)
-        val CobaBtn: Button = itemView.findViewById(R.id.tv_coba)
+        val CobaBtn: TextView = itemView.findViewById(R.id.tv_coba)
         val imageSave: ImageView = itemView.findViewById(R.id.img_save)
 
         fun bind(get: Survey) {
