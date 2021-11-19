@@ -3,9 +3,10 @@ package com.example.course_online.ui.Simpan
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 
 class AdapterSimpan(childFragmentManager: FragmentManager)
-    : FragmentPagerAdapter(childFragmentManager) {
+    : FragmentPagerAdapter(childFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private val simpanFragmentList  = ArrayList<Fragment>()
     private val simpanFragmentTitle = ArrayList<String>()
