@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UserNav.Simpan.SimpanFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/blanktoolbar"
-            android:layout_height="30dp"
-            android:layout_width="match_parent"/>
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_below="@id/blanktoolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_save"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="?actionBarSize" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs_simpan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabGravity="fill"
-                app:tabInlineLabel="true"
-                app:tabMode="fixed"/>
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/simpanViewPager"
+            android:id="@+id/vp_save"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/appBarLayout"/>
+            android:layout_below="@id/tl_save"
+            android:layout_marginTop="5dp" />
 
-    </LinearLayout>
 
-</FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>

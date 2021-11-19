@@ -19,14 +19,24 @@ import kotlinx.android.synthetic.main.fragment_simpan.view.*
 class SimpanFragment : Fragment() {
 
     private lateinit var viewPager: ViewPager
-    private lateinit var tabsSimpan : TabLayout
+    private lateinit var tabsSimpan: TabLayout
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
-    private fun setUpTabs(view: View) {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_simpan, container, false)
+        viewPager = view.findViewById(R.id.vp_save)
+        tabsSimpan = view.findViewById(R.id.tl_save)
+        setUpTabs(view)
+        return view
+    }
 
+    private fun setUpTabs(view: View?) {
         val adapterSimpan = AdapterSimpan(childFragmentManager)
 
         adapterSimpan.addFragment(TopikFragment(), "Topik")
@@ -35,21 +45,10 @@ class SimpanFragment : Fragment() {
 
         viewPager.adapter = adapterSimpan
         tabsSimpan.setupWithViewPager(viewPager)
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_simpan, container, false)
-        viewPager = view.findViewById(R.id.simpanViewPager) as ViewPager
-        tabsSimpan = view.findViewById(R.id.tabs_simpan)
-
-        setUpTabs(view)
-
-        return view
     }
 
 }
+
+
+
+

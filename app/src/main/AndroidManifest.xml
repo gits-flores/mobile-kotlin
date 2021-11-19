@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
-            android:name="com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity"
+            android:name=".ui.Artikel.ArtikelActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.PersonalGrowth.PersonalGrowtActivity"
             android:exported="true" />
         <activity
             android:name=".ui.onBoarding.OnBoardingActivity"
@@ -24,14 +27,14 @@
         <activity
             android:name=".ui.SignInActivity"
             android:exported="true"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="false"
-            android:launchMode="singleTop"></activity>
+            android:launchMode="singleTop" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
