@@ -61,7 +61,7 @@
                     android:lines="3"
                     android:text="@string/dummyTextParagraph"
                     android:textColor="#5D5F61"
-                    android:textSize="14dp" />
+                    android:textSize="18dp" />
 
             </LinearLayout>
 

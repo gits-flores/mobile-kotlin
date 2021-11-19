@@ -8,4 +8,4 @@
     <string name="dummyTextParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nunc massa, vestibulum ut orci at, varius ornare purus. Aliquam erat volutpat. Mauris elementum sit amet est placerat vestibulum. Aenean magna turpis, consectetur nec vulputate eget, mollis id nibh. Donec venenatis iaculis augue, in blandit neque posuere convallis. Pellentesque facilisis maximus nunc non luctus. Aliquam sollicitudin luctus blandit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    </resources>
+</resources>

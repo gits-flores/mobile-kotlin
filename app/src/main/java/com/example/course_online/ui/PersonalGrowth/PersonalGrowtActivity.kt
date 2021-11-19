@@ -17,7 +17,7 @@ class PersonalGrowtActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_persoanl_growt)
+        setContentView(R.layout.activity_personal_growth)
 
         imageID = arrayOf(
             R.drawable.ic_pg_one,

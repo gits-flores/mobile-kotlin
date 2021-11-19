@@ -53,13 +53,6 @@
                 app:layout_constraintTop_toTopOf="@+id/textView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--        <RelativeLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent">-->
-
-
-        <!--        </RelativeLayout>-->
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -148,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_description"
                 android:layout_marginTop="62dp"
-                tools:listitem="@layout/item_personal_growth" />
+                tools:listitem="@layout/item_topik" />
         </LinearLayout>
     </ScrollView>
 

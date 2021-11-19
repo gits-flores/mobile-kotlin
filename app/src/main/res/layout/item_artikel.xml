@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rv_item_artikel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_artikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_img_materi"
+            android:padding="11dp"
+            android:src="@drawable/ic_pg_one"
+            android:backgroundTint="@color/blue"/>
+
+        <TextView
+            android:id="@+id/tv_judul_artikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/img_artikel"
+            android:fontFamily="@font/inter_medium"
+            android:text="Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_judul_artikel"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/img_artikel"
+            android:fontFamily="@font/inter_regular"
+            android:text="Oleh Author"
+            android:textColor="#5D5F61"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/img_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_artikel"
+            android:layout_marginTop="33dp"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/ic_save" />
+
+        <TextView
+            android:id="@+id/tv_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_artikel"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="LIHAT"
+            android:clickable="true"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rv_item_artikel"
+        android:background="#5D5F61" />
+
+</RelativeLayout>
