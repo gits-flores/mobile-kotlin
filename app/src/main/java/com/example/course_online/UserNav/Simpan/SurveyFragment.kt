@@ -27,17 +27,21 @@ class SurveyFragment : Fragment() {
 
         imageID = arrayOf(
             R.drawable.ic_poll,
+            R.drawable.ic_poll,
             R.drawable.ic_poll
         )
         imageSaveID = arrayOf(
             R.drawable.ic_save,
             R.drawable.ic_save,
+            R.drawable.ic_save
         )
         judulID = arrayOf(
+            "Sifat dan Kebiasaan",
             "Sifat dan Kebiasaan",
             "Sifat dan Kebiasaan"
         )
         authorID = arrayOf(
+            "Oleh Tim Personality",
             "Oleh Tim Personality",
             "Oleh Tim Personality"
         )

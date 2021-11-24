@@ -11,10 +11,12 @@
         android:theme="@style/Theme.CourseOnline">
         <activity
             android:name=".ui.Artikel.ArtikelActivity"
+            android:launchMode="singleTask"
             android:exported="true" />
         <activity
             android:name=".ui.PersonalGrowth.PersonalGrowtActivity"
-            android:exported="true" />
+            android:launchMode="singleTask"
+            android:exported="true"/>
         <activity
             android:name=".ui.onBoarding.OnBoardingActivity"
             android:exported="true">
@@ -27,14 +29,15 @@
         <activity
             android:name=".ui.SignInActivity"
             android:exported="true"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"/>
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="false"
             android:launchMode="singleTop" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:launchMode="singleTask"
+            android:exported="false"/>
     </application>
 
 </manifest>

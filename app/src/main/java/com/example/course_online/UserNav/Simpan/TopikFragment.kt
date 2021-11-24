@@ -26,23 +26,28 @@ class TopikFragment : Fragment() {
 
         imageID = arrayOf(
             R.drawable.ic_pg_one,
+            R.drawable.ic_pg_one,
             R.drawable.ic_pg_one
         )
         imageSaveID = arrayOf(
             R.drawable.ic_save,
             R.drawable.ic_save,
+            R.drawable.ic_save
         )
         judulID = arrayOf(
+            "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",
             "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",
             "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda"
         )
         timID = arrayOf(
             "Tim Personality",
+            "Tim Personality",
             "Tim Personality"
         )
         statusID = arrayOf(
             "MULAI",
-            "SELESAI"
+            "SELESAI",
+            "LANJUTKAN"
         )
 
     }

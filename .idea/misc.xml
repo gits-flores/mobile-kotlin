@@ -31,7 +31,8 @@
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/drawable/switch_thumb.xml" value="0.19583333333333333" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/drawable/switch_track.xml" value="0.19583333333333333" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/drawable/user_icon.xml" value="0.19583333333333333" />
-        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_artikel.xml" value="0.13269927536231885" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_persoanl_growt.xml" value="0.1358695652173913" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_personal_growth.xml" value="0.10052083333333334" />
@@ -39,10 +40,10 @@
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/circural_profile_layout.xml" value="0.5" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_artikel.xml" value="0.15172101449275363" />
-        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_home.xml" value="0.12" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_jelajahi.xml" value="0.14583333333333334" />
-        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_profile.xml" value="0.35857805255023184" />
-        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_simpan.xml" value="0.1" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_simpan.xml" value="0.22" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_survey.xml" value="0.15172101449275363" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/fragment_topik.xml" value="0.15172101449275363" />
         <entry key="..\:/Data_Rama/Project_Flores_Squad/mobile-kotlin/app/src/main/res/layout/item_artikel.xml" value="0.22" />

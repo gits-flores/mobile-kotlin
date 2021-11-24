@@ -16,9 +16,6 @@ class SimpanFragment : Fragment() {
     private lateinit var viewPager: ViewPager
     private lateinit var tabsSimpan : TabLayout
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     private fun setUpTabs() {
 

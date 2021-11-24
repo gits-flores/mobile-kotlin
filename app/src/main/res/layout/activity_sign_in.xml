@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:fontFamily="@font/inter_regular"
             android:text="@string/dummy_text"
             android:transitionName="descTransitions"
             android:textAlignment="center"
@@ -62,6 +63,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/email_icon"
                     android:drawableTint="@color/grey"
+                    android:fontFamily="@font/inter_regular"
                     android:lines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -83,6 +85,8 @@
                     android:id="@+id/signIn_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/black"
                     android:lines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +100,8 @@
             android:layout_marginHorizontal="30dp"
             android:background="@drawable/button_bg"
             android:backgroundTint="@color/blue_lagoon"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/inter_regular"
+            android:textFontWeight="600"
             android:text="Login"
             android:textSize="18dp"
             android:textAllCaps="false"
@@ -173,12 +178,12 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/loginGmail_btn">
+            app:layout_constraintTop_toBottomOf="@+id/login_btn">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/inter_regular"
                 android:text="Don't have an account? " />
 
             <TextView
@@ -187,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/inter_regular"
                 android:text=" Sign Up"
                 android:textColor="#2a9df4" />
         </LinearLayout>
@@ -199,6 +204,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/dummy_text"
             android:textAlignment="center"
+            android:fontFamily="@font/inter_regular"
             app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

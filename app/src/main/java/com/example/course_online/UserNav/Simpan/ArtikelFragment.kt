@@ -28,17 +28,21 @@ class ArtikelFragment : Fragment() {
 
         imageID = arrayOf(
             R.drawable.ic_pg_one,
+            R.drawable.ic_pg_one,
             R.drawable.ic_pg_one
         )
         imageSaveID = arrayOf(
             R.drawable.ic_save,
             R.drawable.ic_save,
+            R.drawable.ic_save
         )
         judulID = arrayOf(
+            "Personality Types vs. Stereotypes",
             "Personality Types vs. Stereotypes",
             "Personality Types vs. Stereotypes"
         )
         authorID = arrayOf(
+            "Oleh Deni Alfian",
             "Oleh Deni Alfian",
             "Oleh Deni Alfian"
         )
