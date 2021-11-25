@@ -8,8 +8,13 @@ import android.util.Pair
 import android.widget.*
 import com.example.course_online.MainActivity
 import com.example.course_online.R
+import com.example.course_online.data.ResponseLogin
+import com.example.course_online.network.ApiClient
 import com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
 
@@ -42,8 +47,24 @@ class SignInActivity : AppCompatActivity() {
         }
 
         loginBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            ApiClient.endPoint.Login(signIn_email.text.toString(), signIn_pass.text.toString())
+                .enqueue(object : Callback<ResponseLogin>{
+                    override fun onResponse(
+                        call: Call<ResponseLogin>,
+                        response: Response<ResponseLogin>
+                    ) {
+                        if (response.isSuccessful){
+                            val response: ResponseLogin? = response.body()
+                            Toast.makeText(this@SignInActivity, "Login Succes $response", Toast.LENGTH_SHORT).show()
+                        }else{
+                            Toast.makeText(this@SignInActivity, "Login Failed $response", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
+                        Toast.makeText(this@SignInActivity, "$t", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
 
         signUpBtn.setOnClickListener {
