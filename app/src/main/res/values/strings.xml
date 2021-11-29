@@ -11,4 +11,10 @@
     <string name="artikel">Artikel</string>
     <string name="dapatkan_saran_dan_tip_tentang_segala_hal_mulai_dari_kecerdasan_emosional_hingga_menciptakan_hubungan_yang_memuaskan">Dapatkan saran dan tip tentang segala hal mulai dari kecerdasan emosional hingga menciptakan hubungan yang memuaskan.</string>
     <string name="artikel_bermasalah">Artikel Bermasalah</string>
+
+    <string-array name="Gender">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
 </resources>

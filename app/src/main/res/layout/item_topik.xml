@@ -47,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/img_materi"
             android:layout_marginTop="33dp"
-            android:src="@drawable/ic_save" />
+            android:src="@drawable/ic_save"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/tv_status_module"

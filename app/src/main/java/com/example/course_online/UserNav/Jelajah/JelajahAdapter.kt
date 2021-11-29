@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
+import kotlinx.android.synthetic.main.item_jelajah.view.*
 
 class JelajahAdapter(
     private var listJelajah: ArrayList<Jelajah>
@@ -30,7 +31,7 @@ class JelajahAdapter(
         val desc: TextView = itemView.findViewById(R.id.tv_desc_jelajah)
         val btn: TextView = itemView.findViewById(R.id.btn_pelajariJelajah)
         init {
-            itemView.setOnClickListener {
+            itemView.btn_pelajariJelajah.setOnClickListener {
                 listener.onItemClick(adapterPosition)
             }
         }
