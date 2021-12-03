@@ -8,6 +8,7 @@
         android:id="@+id/rv_item_pg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:padding="16dp">
 
         <ImageView
@@ -47,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/img_materi"
             android:layout_marginTop="33dp"
-            android:src="@drawable/ic_save"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:src="@drawable/ic_save" />
 
         <TextView
             android:id="@+id/tv_status_module"
@@ -57,6 +58,7 @@
             android:layout_below="@id/img_materi"
             android:layout_alignParentRight="true"
             android:layout_marginTop="33dp"
+            android:clickable="true"
             android:fontFamily="@font/inter_medium"
             android:text="@string/mulai"
             android:textColor="#007C90"

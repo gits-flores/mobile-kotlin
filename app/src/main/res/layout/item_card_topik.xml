@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintDimensionRatio="2:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentPaddingTop="20dp"
+        app:contentPaddingBottom="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_ilustrasiTopik"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/blank_image"/>
+
+                <TextView
+                    android:id="@+id/tv_isiTopik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="Ini Teks ukuran 12"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tv_isiTopik2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="Ini Teks ukuran 14"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_isiTopik3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="Ini Teks ukuran 18"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_isiTopik4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ini Teks ukuran 24"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/tv_isiTopik5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="@string/dummyTextParagraph"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black"
+                    android:justificationMode="inter_word"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
