@@ -1,11 +1,13 @@
 package com.example.course_online.ui.Artikel
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
+import com.example.course_online.ui.DetailArtikelActivity
 import com.example.course_online.ui.PersonalGrowth.PersonalGrowth
 
 class ArtikelActivity : AppCompatActivity() {
@@ -53,7 +55,7 @@ class ArtikelActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rv_artikel)
         recyclerView.layoutManager = LinearLayoutManager(this)
         artikellList = arrayListOf<Artikel>()
-        recyclerView.adapter = AdapterArtikel(artikellList)
+//        recyclerView.adapter = AdapterArtikel(artikellList)
         getArtikel()
     }
 
@@ -62,5 +64,13 @@ class ArtikelActivity : AppCompatActivity() {
             val data = Artikel(iconID[i], saveID[i], titleID[i], timID[i], statusID[i])
             artikellList.add(data)
         }
+        val adapterArtikel = AdapterArtikel(artikellList)
+        recyclerView.adapter = adapterArtikel
+        adapterArtikel.setOnItemClickListener(object : AdapterArtikel.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                startActivity(Intent(this@ArtikelActivity, DetailArtikelActivity::class.java))
+            }
+
+        })
     }
 }

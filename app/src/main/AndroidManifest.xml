@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
+            android:name=".ui.DetailArtikelActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.Profile.EditProfileActivity"
             android:exported="false"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.Artikel.ArtikelActivity"
             android:exported="false"
@@ -25,11 +28,7 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.onBoarding.OnBoardingActivity"
-            android:exported="true">
-
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ui.SignInActivity"
             android:exported="true"
@@ -42,13 +41,11 @@
             android:name=".MainActivity"
             android:exported="false"
             android:launchMode="singleTask">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
