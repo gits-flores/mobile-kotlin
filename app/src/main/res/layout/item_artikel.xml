@@ -58,11 +58,11 @@
             android:layout_below="@id/img_artikel"
             android:layout_alignParentRight="true"
             android:layout_marginTop="33dp"
+            android:clickable="true"
             android:fontFamily="@font/inter_medium"
             android:text="LIHAT"
-            android:clickable="true"
             android:textColor="@color/blue"
-            android:textSize="14sp" />
+            android:textSize="14sp"/>
     </RelativeLayout>
 
     <View

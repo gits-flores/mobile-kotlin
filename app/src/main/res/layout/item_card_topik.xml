@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_topik"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardCornerRadius="20dp"
@@ -98,5 +99,11 @@
 
     </androidx.cardview.widget.CardView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="vertical"
+        android:background="@color/body"
+        app:layout_constraintTop_toBottomOf="@+id/card_topik"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

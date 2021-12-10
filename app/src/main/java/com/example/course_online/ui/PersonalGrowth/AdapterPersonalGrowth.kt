@@ -41,6 +41,11 @@ class AdapterPersonalGrowth(private var listPersonal: ArrayList<PersonalGrowth>)
             val intent = Intent(holder.itemView.context, PelajariTopikActivity::class.java)
             holder.itemView.context.startActivity(intent)
         }
+
+        holder.status.setOnClickListener {
+            val intent = Intent(holder.itemView.context, PelajariTopikActivity::class.java)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = listPersonal.size

@@ -7,8 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.course_online.MainActivity
 import com.example.course_online.R
+import com.example.course_online.UserNav.Home.HomeFragment
+import com.example.course_online.ui.Profile.AboutAppsActivity
 import com.example.course_online.ui.Profile.EditProfileActivity
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {
 
@@ -22,20 +26,25 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        editBtn = view.findViewById(R.id.btn_editInfoUser)
-
-        editProfile()
+        setBtn(view)
 
         return view
     }
 
-    private fun editProfile() {
-        editBtn.setOnClickListener {
+
+    private fun setBtn(view: View) {
+
+        view.btn_editInfoUser.setOnClickListener {
             val intent = Intent(activity, EditProfileActivity::class.java)
             startActivity(intent)
         }
+
+        view.rl_tentangApp.setOnClickListener {
+            val intent = Intent(activity, AboutAppsActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

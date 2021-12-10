@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_description"
                 android:layout_marginTop="62dp"
-                tools:listitem="@layout/item_personal_growth" />
+                tools:listitem="@layout/item_artikel" />
         </LinearLayout>
     </ScrollView>
 
