@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourseOnline">
         <activity
+            android:name=".ui.Simpan.SummaryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.CongratulationActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.DetailArtikelActivity"
             android:exported="true" />
         <activity
@@ -31,7 +37,7 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.onBoarding.OnBoardingActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.SignInActivity"
             android:exported="true"
