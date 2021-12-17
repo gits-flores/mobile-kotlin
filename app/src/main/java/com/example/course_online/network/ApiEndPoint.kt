@@ -1,6 +1,6 @@
 package com.example.course_online.network
 
-import com.example.course_online.data.ResponseLogin
+import com.example.course_online.data.DataLogin
 import com.example.course_online.data.ResponseRegister
 import retrofit2.Call
 import retrofit2.http.Field
@@ -14,7 +14,7 @@ interface ApiEndPoint {
     fun Login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Call<ResponseLogin>
+    ): Call<DataLogin>
 
     @FormUrlEncoded
     @POST("register")

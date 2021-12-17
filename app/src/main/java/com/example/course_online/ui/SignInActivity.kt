@@ -8,7 +8,8 @@ import android.util.Pair
 import android.widget.*
 import com.example.course_online.MainActivity
 import com.example.course_online.R
-import com.example.course_online.data.ResponseLogin
+import com.example.course_online.data.DataLogin
+import com.example.course_online.data.PrefsManagers
 import com.example.course_online.network.ApiClient
 import com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
@@ -24,10 +25,13 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var signUpBtn: TextView
     private lateinit var logoApp: ImageView
     private lateinit var descApp: TextView
+    lateinit var prefsManagers: PrefsManagers
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        prefsManagers = PrefsManagers(this)
 
         setElement()
 
@@ -48,20 +52,30 @@ class SignInActivity : AppCompatActivity() {
 
         loginBtn.setOnClickListener {
             ApiClient.endPoint.Login(signIn_email.text.toString(), signIn_pass.text.toString())
-                .enqueue(object : Callback<ResponseLogin>{
+                .enqueue(object : Callback<DataLogin> {
                     override fun onResponse(
-                        call: Call<ResponseLogin>,
-                        response: Response<ResponseLogin>
+                        call: Call<DataLogin>,
+                        response: Response<DataLogin>
                     ) {
-                        if (response.isSuccessful){
-                            val response: ResponseLogin? = response.body()
-                            Toast.makeText(this@SignInActivity, "Login Succes $response", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(this@SignInActivity, "Login Failed $response", Toast.LENGTH_SHORT).show()
+                        if (response.isSuccessful) {
+                            val response: DataLogin? = response.body()
+                            Toast.makeText(
+                                this@SignInActivity,
+                                "Login Succes",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+                            resultLogin(response!!)
+                        } else {
+                            Toast.makeText(
+                                this@SignInActivity,
+                                "Masukkan Data Dengan Benar",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
 
-                    override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
+                    override fun onFailure(call: Call<DataLogin>, t: Throwable) {
                         Toast.makeText(this@SignInActivity, "$t", Toast.LENGTH_SHORT).show()
                     }
                 })
@@ -69,7 +83,6 @@ class SignInActivity : AppCompatActivity() {
 
         signUpBtn.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
-
             val options = ActivityOptions.makeSceneTransitionAnimation(
                 this,
                 Pair.create(logoApp, "logoTransitions"),
@@ -81,5 +94,15 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent, options.toBundle())
         }
 
+    }
+
+    private fun resultLogin(result: DataLogin) {
+//        setPrefs(prefsManagers, result.message))
+    }
+
+    fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
+        prefsManagers.prefsIsLogin = ""
+        prefsManagers.prefsToken = responseLog.token
+        prefsManagers.prefsName = responseLog.name
     }
 }
