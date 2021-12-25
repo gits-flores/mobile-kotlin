@@ -4,6 +4,7 @@ import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Pair
 import android.widget.*
 import com.example.course_online.MainActivity
@@ -21,7 +22,6 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var formLayout: LinearLayout
     private lateinit var loginBtn: Button
-    private lateinit var gmailLoginBtn: Button
     private lateinit var signUpBtn: TextView
     private lateinit var logoApp: ImageView
     private lateinit var descApp: TextView
@@ -41,7 +41,6 @@ class SignInActivity : AppCompatActivity() {
 
         formLayout = findViewById(R.id.form_layout)
         loginBtn = findViewById(R.id.login_btn)
-        gmailLoginBtn = findViewById(R.id.loginGmail_btn)
         signUpBtn = findViewById(R.id.signUp_txt)
         logoApp = findViewById(R.id.iv_logo)
         descApp = findViewById(R.id.tv_descApp)
@@ -65,7 +64,8 @@ class SignInActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             startActivity(Intent(this@SignInActivity, MainActivity::class.java))
-                            resultLogin(response!!)
+                            setPrefs(prefsManagers, response!!)
+                            finish()
                         } else {
                             Toast.makeText(
                                 this@SignInActivity,
@@ -87,7 +87,7 @@ class SignInActivity : AppCompatActivity() {
                 this,
                 Pair.create(logoApp, "logoTransitions"),
                 Pair.create(descApp, "descTransitions"),
-                Pair.create(gmailLoginBtn, "btnTransitions"),
+                Pair.create(loginBtn, "btnTransitions"),
                 Pair.create(formLayout, "layoutTransition")
             )
 
@@ -96,6 +96,9 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
+//    private fun resultLogin(result: DataLogin) {
+//        setPrefs(prefsManagers, result)
+//    }
     private fun resultLogin(result: DataLogin) {
 //        setPrefs(prefsManagers, result))
     }
@@ -103,6 +106,8 @@ class SignInActivity : AppCompatActivity() {
     fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
         prefsManagers.prefsIsLogin = ""
         prefsManagers.prefsToken = responseLog.token
-        prefsManagers.prefsName = responseLog.name
+        prefsManagers.prefsName = responseLog.message
+
+        Log.i("Token", responseLog.token)
     }
 }

@@ -3,6 +3,8 @@ package com.example.course_online.ui.PelajariTopik
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.DragEvent
+import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.course_online.databinding.ActivityPelajariTopikBinding
@@ -24,14 +26,25 @@ class PelajariTopikActivity : AppCompatActivity() {
         setUpDrawer()
 
         binding.icBackBtn.setOnClickListener {
-            val intent = Intent(this, PersonalGrowtActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
             finish()
         }
-
     }
 
+
     private fun setUpDrawer() {
+        
+        binding.drawer.setOnDragListener { view, dragEvent ->
+            when(dragEvent.action){
+                DragEvent.ACTION_DRAG_STARTED -> {
+                    binding.CardTopikViewpager.translationX = -(binding.contentDrawer.width.toFloat())
+                true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
 
         binding.drawer.setOnDrawerOpenListener{
             binding.CardTopikViewpager.translationX = -(binding.contentDrawer.width.toFloat())
@@ -39,6 +52,7 @@ class PelajariTopikActivity : AppCompatActivity() {
             binding.btnSelesaiPelajari.setOnClickListener {
                 val intent = Intent(this, CongratulationActivity::class.java)
                 startActivity(intent)
+                finish()
             }
 
         }

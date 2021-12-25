@@ -7,8 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
+import com.example.course_online.data.artikel.DataListArtikel
+import com.example.course_online.data.artikel.DataListArtikelItem
+import com.squareup.picasso.Picasso
 
-class AdapterArtikel(private var listArtikel: ArrayList<Artikel>) :
+class AdapterArtikel(private var listArtikel: ArrayList<DataListArtikelItem>) :
     RecyclerView.Adapter<AdapterArtikel.myViewHolder>() {
     private lateinit var mListener: onItemClickListener
 
@@ -21,12 +24,17 @@ class AdapterArtikel(private var listArtikel: ArrayList<Artikel>) :
 
     }
 
+    fun setData(result: List<DataListArtikelItem>){
+        listArtikel.clear()
+        listArtikel.addAll(result)
+        notifyDataSetChanged()
+    }
+
     class myViewHolder(view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
-        val image: ImageView = itemView.findViewById(R.id.img_materi)
+        val image: ImageView = itemView.findViewById(R.id.img_artikel)
         val imageSave: ImageView = itemView.findViewById(R.id.img_save)
-        val judul: TextView = itemView.findViewById(R.id.tv_judul_module)
-        val tim: TextView = itemView.findViewById(R.id.tv_tim_module)
-        var status: TextView = itemView.findViewById(R.id.tv_status_module)
+        val judul: TextView = itemView.findViewById(R.id.tv_judul_artikel)
+        val tim: TextView = itemView.findViewById(R.id.tv_author)
 
         init {
             itemView.setOnClickListener {
@@ -37,17 +45,16 @@ class AdapterArtikel(private var listArtikel: ArrayList<Artikel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_topik, parent, false)
+            .inflate(R.layout.item_artikel, parent, false)
         return myViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val item = listArtikel[position]
-        holder.image.setImageResource(item._Icon)
-        holder.imageSave.setImageResource(item._ImageSave)
-        holder.judul.text = item._Title
-        holder.tim.text = item._Tim
-        holder.status.text = item._Status
+        val thumbnailImageUrl = "echo.alghiffaryenterprise.id/public/uploads/{${item.thumbnail}}"
+        holder.judul.text = item.title
+        Picasso.get().load(thumbnailImageUrl).fit().centerCrop().into(holder.image)
+        holder.tim.text = "Tim Personality"
     }
 
     override fun getItemCount() = listArtikel.size
