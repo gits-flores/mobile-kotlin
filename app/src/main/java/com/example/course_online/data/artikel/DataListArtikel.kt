@@ -3,11 +3,11 @@ package com.example.course_online.data.artikel
 import com.google.gson.annotations.SerializedName
 
 
-data class DataListArtikel(
-
-	@field:SerializedName("DataListArtikel")
-	val dataListArtikel: List<DataListArtikelItem?>? = null
-)
+//data class DataListArtikel(
+//
+//	@field:SerializedName("DataListArtikel")
+//	val dataListArtikel: List<DataListArtikelItem?>? = null
+//)
 
 data class User(
 
@@ -39,7 +39,7 @@ data class User(
 	val email: String? = null
 )
 
-data class DataListArtikelItem(
+data class DataListArtikel(
 
 	@field:SerializedName("thumbnail")
 	val thumbnail: String? = null,

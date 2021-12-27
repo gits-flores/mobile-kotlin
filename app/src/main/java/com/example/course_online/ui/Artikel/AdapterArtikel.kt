@@ -8,10 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
 import com.example.course_online.data.artikel.DataListArtikel
-import com.example.course_online.data.artikel.DataListArtikelItem
 import com.squareup.picasso.Picasso
 
-class AdapterArtikel(private var listArtikel: ArrayList<DataListArtikelItem>) :
+class AdapterArtikel(private var listArtikel: ArrayList<DataListArtikel>) :
     RecyclerView.Adapter<AdapterArtikel.myViewHolder>() {
     private lateinit var mListener: onItemClickListener
 
@@ -24,7 +23,7 @@ class AdapterArtikel(private var listArtikel: ArrayList<DataListArtikelItem>) :
 
     }
 
-    fun setData(result: List<DataListArtikelItem>){
+    fun setData(result: List<DataListArtikel>){
         listArtikel.clear()
         listArtikel.addAll(result)
         notifyDataSetChanged()
@@ -51,10 +50,10 @@ class AdapterArtikel(private var listArtikel: ArrayList<DataListArtikelItem>) :
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val item = listArtikel[position]
-        val thumbnailImageUrl = "echo.alghiffaryenterprise.id/public/uploads/{${item.thumbnail}}"
+        val thumbnailImageUrl = "echo.alghiffaryenterprise.id/uploads/{${item.thumbnail}}"
         holder.judul.text = item.title
-        Picasso.get().load(thumbnailImageUrl).fit().centerCrop().into(holder.image)
-        holder.tim.text = "Tim Personality"
+        holder.image.setImageResource(R.drawable.ic_poll)
+        holder.tim.text = item.user!!.name
     }
 
     override fun getItemCount() = listArtikel.size
