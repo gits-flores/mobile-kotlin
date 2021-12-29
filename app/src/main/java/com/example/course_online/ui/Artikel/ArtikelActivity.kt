@@ -20,7 +20,6 @@ import retrofit2.Response
 class ArtikelActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapterArtikel: AdapterArtikel
     lateinit var prefsManagers: PrefsManagers
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +46,6 @@ class ArtikelActivity : AppCompatActivity() {
                     if(response.isSuccessful){
                         val artikel = response.body()!!
                         adapterArtikel.setData(artikel)
-//                        Log.i("Data Artikel", artikel.toString())
                     }
                 }
 
@@ -57,17 +55,9 @@ class ArtikelActivity : AppCompatActivity() {
                         "ERROR : ${t}",
                         Toast.LENGTH_SHORT
                     ).show()
-
                     Log.e("ERROR ARTIKEL", t.toString())
                 }
 
             })
-
-        adapterArtikel.setOnItemClickListener(object : AdapterArtikel.onItemClickListener{
-            override fun onItemClick(position: Int) {
-                startActivity(Intent(this@ArtikelActivity, DetailArtikelActivity::class.java))
-            }
-
-        })
     }
 }

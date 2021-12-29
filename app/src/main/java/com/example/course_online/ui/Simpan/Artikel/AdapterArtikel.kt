@@ -17,7 +17,7 @@ class AdapterArtikel(private var  listSavedArtikel: ArrayList<Artikel>)
         val image: ImageView = itemView.findViewById(R.id.img_artikel)
         val judul: TextView = itemView.findViewById(R.id.tv_judul_artikel)
         val author: TextView = itemView.findViewById(R.id.tv_author)
-        val BacaBtn: TextView = itemView.findViewById(R.id.tv_read)
+        val BacaBtn: TextView = itemView.findViewById(R.id.tv_read_artikel)
         val imageSave: ImageView = itemView.findViewById(R.id.img_save)
 
         fun bind(get: Artikel) {
