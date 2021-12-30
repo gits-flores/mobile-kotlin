@@ -40,7 +40,7 @@
             android:fontFamily="@font/inter_regular"
             android:text="Oleh Author"
             android:textColor="#5D5F61"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/img_save"
@@ -52,7 +52,7 @@
             android:src="@drawable/ic_save" />
 
         <TextView
-            android:id="@+id/tv_read"
+            android:id="@+id/tv_read_artikel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_artikel"
@@ -62,7 +62,7 @@
             android:fontFamily="@font/inter_medium"
             android:text="LIHAT"
             android:textColor="@color/blue"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <View
