@@ -30,9 +30,9 @@ class TopikFragment : Fragment() {
             R.drawable.ic_pg_one
         )
         imageSaveID = arrayOf(
-            R.drawable.ic_save,
-            R.drawable.ic_save,
-            R.drawable.ic_save
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave
         )
         judulID = arrayOf(
             "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",

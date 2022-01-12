@@ -34,7 +34,8 @@ class ArtikelActivity : AppCompatActivity() {
     }
 
     private fun getArtikel() {
-        val adapterArtikel = AdapterArtikel(arrayListOf())
+        prefsManagers = PrefsManagers(this)
+        val adapterArtikel = AdapterArtikel(arrayListOf(), prefsManagers)
         recyclerView.adapter = adapterArtikel
 
         ApiClient.endPoint.getListArtikel(token = "Bearer ${prefsManagers.prefsToken}")

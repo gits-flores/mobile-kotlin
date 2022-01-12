@@ -99,9 +99,6 @@ class SignInActivity : AppCompatActivity() {
 //    private fun resultLogin(result: DataLogin) {
 //        setPrefs(prefsManagers, result)
 //    }
-    private fun resultLogin(result: DataLogin) {
-//        setPrefs(prefsManagers, result))
-    }
 
     fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
         prefsManagers.prefsIsLogin = ""

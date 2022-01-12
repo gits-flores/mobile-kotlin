@@ -49,7 +49,7 @@
             android:layout_below="@id/img_materi"
             android:layout_marginTop="33dp"
             android:clickable="true"
-            android:src="@drawable/ic_save" />
+            android:src="@drawable/ic_unsave" />
 
         <TextView
             android:id="@+id/tv_status_module"

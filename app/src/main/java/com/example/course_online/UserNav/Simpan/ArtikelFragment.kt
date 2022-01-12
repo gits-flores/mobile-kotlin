@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
-import com.example.course_online.UserNav.Home.AdapterModulPilihan
-import com.example.course_online.UserNav.Home.ModulPilihan
 import com.example.course_online.ui.Simpan.Artikel.AdapterArtikel
 import com.example.course_online.ui.Simpan.Artikel.Artikel
 
@@ -32,9 +29,9 @@ class ArtikelFragment : Fragment() {
             R.drawable.ic_pg_one
         )
         imageSaveID = arrayOf(
-            R.drawable.ic_save,
-            R.drawable.ic_save,
-            R.drawable.ic_save
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave
         )
         judulID = arrayOf(
             "Personality Types vs. Stereotypes",

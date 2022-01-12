@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
-import com.example.course_online.ui.Simpan.Artikel.AdapterArtikel
-import com.example.course_online.ui.Simpan.Artikel.Artikel
 import com.example.course_online.ui.Simpan.Survey.AdapterSurvey
 import com.example.course_online.ui.Simpan.Survey.Survey
 
@@ -31,9 +29,9 @@ class SurveyFragment : Fragment() {
             R.drawable.ic_poll
         )
         imageSaveID = arrayOf(
-            R.drawable.ic_save,
-            R.drawable.ic_save,
-            R.drawable.ic_save
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave,
+            R.drawable.ic_unsave
         )
         judulID = arrayOf(
             "Sifat dan Kebiasaan",
