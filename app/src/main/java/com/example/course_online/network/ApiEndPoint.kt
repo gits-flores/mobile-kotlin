@@ -1,9 +1,6 @@
 package com.example.course_online.network
 
-import com.example.course_online.data.DataLogin
-import com.example.course_online.data.ResponseRegister
-import com.example.course_online.data.ResponseSaveArticle
-import com.example.course_online.data.ResponseUnsaveArticle
+import com.example.course_online.data.*
 import com.example.course_online.data.artikel.DataListArtikel
 import com.example.course_online.data.artikel.ResponseDetailArtikel
 import retrofit2.Call
@@ -52,4 +49,10 @@ interface ApiEndPoint {
         @Path("user_id") user_id: String,
         @Path("article_id") article_id: Int
     ): Call<ResponseUnsaveArticle>
+
+    @GET("save-article-user/{user_id}")
+    fun getSaveArticles(
+        @Header("Authorization") token: String,
+        @Path("user_id") user_id: String,
+    ): Call<List<DataSaveArticle>>
  }

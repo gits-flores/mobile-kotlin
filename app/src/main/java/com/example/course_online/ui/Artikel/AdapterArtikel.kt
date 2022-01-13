@@ -24,8 +24,6 @@ class AdapterArtikel(
 ) :
     RecyclerView.Adapter<AdapterArtikel.myViewHolder>() {
 
-    var decoded: String = String(Base64.decode(prefsManagers.prefsToken, 0))
-
     fun setData(result: List<DataListArtikel>) {
         listArtikel.clear()
         listArtikel.addAll(result)
@@ -64,7 +62,7 @@ class AdapterArtikel(
                 if (isChecked) {
                     ApiClient.endPoint.saveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "29",
+                        "3",
                         idArtikel
                     ).enqueue(object : Callback<ResponseSaveArticle> {
                         override fun onResponse(
@@ -95,7 +93,7 @@ class AdapterArtikel(
                 } else {
                     ApiClient.endPoint.unSaveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "29",
+                        "3",
                         idArtikel!!
                     )
                         .enqueue(object : Callback<ResponseUnsaveArticle> {
