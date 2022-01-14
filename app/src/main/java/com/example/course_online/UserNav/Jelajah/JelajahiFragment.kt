@@ -23,14 +23,14 @@ class JelajahiFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         IconID = arrayOf(
-            R.drawable.ic_personal_growth,
-            R.drawable.ic_romantic_relationships,
-            R.drawable.ic_careers
+            R.drawable.ic_articles,
+            R.drawable.ic_survey,
+            R.drawable.ic_coming_soon
         )
         titleID = arrayOf(
             "Artikel",
             "Survey",
-            "Comin Soon"
+            "Coming Soon"
         )
         descID = arrayOf(
             "Dapatkan tips, saran, dan wawasan mendalam tentang berbagai topik.",
@@ -40,7 +40,7 @@ class JelajahiFragment : Fragment() {
         btnID = arrayOf(
             "BACA SEKARANG",
             "TES SEKARANG",
-            "COMIN SOON"
+            "COMING SOON"
         )
 
     }
@@ -69,9 +69,20 @@ class JelajahiFragment : Fragment() {
         recyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : JelajahAdapter.onItemClickListener {
             override fun onItemClick(position: Int) {
-                startActivity(Intent(context, ArtikelActivity::class.java))
-            }
+                when{
+                    titleID[position] == "Artikel"
+                    -> startActivity(Intent(context, ArtikelActivity::class.java))
+                    titleID[position] == "Survey"
+                    -> Toast.makeText(context,
+                        "Fitur ini masih dalam pengembangan",
+                        Toast.LENGTH_SHORT).show()
+                    titleID[position] == "Coming Soon"
+                    -> Toast.makeText(context,
+                        "Nantikan fitur baru dari kami",
+                        Toast.LENGTH_SHORT).show()
+                }
 
+            }
         })
 
     }

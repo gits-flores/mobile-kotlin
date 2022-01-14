@@ -24,7 +24,7 @@
             android:layout_height="125dp"
             android:orientation="vertical"
             android:background="@color/body"
-            app:layout_constraintTop_toBottomOf="@+id/rv_artikel"/>
+            app:layout_constraintTop_toBottomOf="@+id/rv_artikel_save"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

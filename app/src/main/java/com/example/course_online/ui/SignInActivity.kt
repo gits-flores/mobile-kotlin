@@ -34,7 +34,25 @@ class SignInActivity : AppCompatActivity() {
         prefsManagers = PrefsManagers(this)
 
         setElement()
+        onStart()
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        isLogin()
+    }
+
+    private fun isLogin() {
+        if (prefsManagers.prefsIsLogin){
+            Toast.makeText(
+                this@SignInActivity,
+                prefsManagers.prefsName,
+                Toast.LENGTH_SHORT
+            ).show()
+            startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+            finish()
+        }
     }
 
     private fun setElement() {
@@ -88,6 +106,7 @@ class SignInActivity : AppCompatActivity() {
                 Pair.create(logoApp, "logoTransitions"),
                 Pair.create(descApp, "descTransitions"),
                 Pair.create(loginBtn, "btnTransitions"),
+                Pair.create(tv_policy, "kebijakanTransitions"),
                 Pair.create(formLayout, "layoutTransition")
             )
 
@@ -96,15 +115,11 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-//    private fun resultLogin(result: DataLogin) {
-//        setPrefs(prefsManagers, result)
-//    }
-
     fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
-        prefsManagers.prefsIsLogin = ""
+        prefsManagers.prefsIsLogin = true
         prefsManagers.prefsToken = responseLog.token
         prefsManagers.prefsName = responseLog.message
 
-        Log.i("Token", responseLog.token)
+//        Log.i("Token", responseLog.token)
     }
 }

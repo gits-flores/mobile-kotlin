@@ -29,16 +29,14 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="136dp"
-                android:layout_toRightOf="@id/ic_back"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/inter_medium"
                 android:text="Selamat"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ic_back"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.769"
-                app:layout_constraintStart_toEndOf="@+id/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ic_back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,11 +103,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="32dp"
             android:fontFamily="@font/inter_semibold"
             android:text="RANGKUMAN TOPIK"
             android:textColor="#007C90"
             android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_bacaRangkuman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Baca Disini"
+            android:drawableStart="@drawable/ic_arrow_right"
+            android:drawableEnd="@drawable/ic_back"
+            android:drawablePadding="10dp"
+            android:drawableTint="#007C90"
+            android:padding="10dp"
+            android:textColor="#007C90"
+            android:textSize="14sp"
+            android:clickable="true"/>
+
     </LinearLayout>
 
     <TextView
@@ -144,7 +160,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/tv_nextTopik"
         android:layout_centerInParent="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button_bg"
         android:fontFamily="@font/inter_semibold"
         android:text="Pelajari"

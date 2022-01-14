@@ -26,8 +26,6 @@ class ArtikelFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -59,6 +57,7 @@ class ArtikelFragment : Fragment() {
                     if (response.isSuccessful) {
                         val artikelSave = response.body()
                         adapterArtikelSave.setData(artikelSave!!)
+                        onStart()
                     }
                 }
 

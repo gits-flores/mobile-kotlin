@@ -2,64 +2,74 @@ package com.example.course_online.ui.PersonalGrowth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
+import com.example.course_online.data.PrefsManagers
+import com.example.course_online.data.topik.ModulesItem
+import com.example.course_online.data.topik.ResponseListTopik
+import com.example.course_online.network.ApiClient
+import kotlinx.android.synthetic.main.activity_personal_growth.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PersonalGrowtActivity : AppCompatActivity() {
+
     private lateinit var recyclerView: RecyclerView
-    private lateinit var personalList: ArrayList<PersonalGrowth>
-    lateinit var imageID: Array<Int>
-    lateinit var imageSaveID: Array<Int>
-    lateinit var judulID: Array<String>
-    lateinit var timID: Array<String>
-    lateinit var statusID: Array<String>
+    lateinit var prefsManagers: PrefsManagers
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_growth)
 
-        imageID = arrayOf(
-            R.drawable.ic_pg_one,
-            R.drawable.ic_pg_two,
-            R.drawable.ic_pg_one,
-            R.drawable.ic_pg_two
-        )
-        imageSaveID = arrayOf(
-            R.drawable.ic_unsave,
-            R.drawable.ic_unsave,
-            R.drawable.ic_unsave,
-            R.drawable.ic_unsave,
-        )
-        judulID = arrayOf(
-            "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",
-            "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",
-            "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda",
-            "Menembus Rintangan untuk Belajar dan Menemukan Potensi Tersembunyi Anda"
-        )
-        timID = arrayOf(
-            "Tim Personality",
-            "Tim Personality",
-            "Tim Personality",
-            "Tim Personality",
-        )
-        statusID = arrayOf(
-            "MULAI",
-            "SELESAI",
-            "MULAI",
-            "SELESAI",
-        )
+        prefsManagers = PrefsManagers(this)
+
+        val idCourse = intent.getIntExtra("idCourse", 1)
+        prefsManagers.prefsCourse = idCourse
         recyclerView = findViewById(R.id.rv_personal_growth)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        personalList = arrayListOf<PersonalGrowth>()
-        recyclerView.adapter = AdapterPersonalGrowth(personalList)
-        getPersonal()
+
+        getListTopik(idCourse)
+
     }
 
-    private fun getPersonal() {
-        for (i in imageID.indices) {
-            val data = PersonalGrowth(imageID[i], imageSaveID[i], judulID[i], timID[i], statusID[i])
-            personalList.add(data)
-        }
+    private fun getListTopik(id: Int) {
+        val adapterTopik = AdapterPersonalGrowth(arrayListOf())
+        recyclerView.adapter = adapterTopik
+
+        ApiClient.endPoint.getListTopik(token = "Bearer ${prefsManagers.prefsToken}", id)
+            .enqueue(object : Callback<ResponseListTopik>{
+                override fun onResponse(
+                    call: Call<ResponseListTopik>,
+                    response: Response<ResponseListTopik>
+                ) {
+                    if (response.isSuccessful){
+                        val course = response.body()
+                        tv_course.text = course!!.title
+                        tv_desc_course.text = course.description
+                        if (course.modules?.size != 0){
+                            adapterTopik.setData(course.modules as List<ModulesItem>)
+                        }
+                        else{
+                            rv_personal_growth.visibility = GONE
+                            ll_no_modul.visibility = VISIBLE
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseListTopik>, t: Throwable) {
+                    Toast.makeText(
+                        applicationContext,
+                        "ERROR : ${t}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e("ERROR LIST TOPIK", t.toString())
+                }
+            })
     }
 }

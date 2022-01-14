@@ -60,25 +60,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tb_personal">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:id="@+id/rv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tb_personal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="42dp">
+                android:layout_marginTop="42dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/tv_pg"
+                        android:id="@+id/tv_course"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_semibold"
@@ -87,10 +88,10 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/tv_desc_ps"
+                        android:id="@+id/tv_desc_course"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_pg"
+                        android:layout_below="@id/tv_course"
                         android:layout_marginTop="7dp"
                         android:fontFamily="@font/inter_medium"
                         android:text="@string/jelajahi_ciri_ciri_kepribadian_anda_dan_pelajari_cara_mengembangkan_untuk_tumbuh_sebagai_pribadi_yang_lebih_baik"
@@ -102,7 +103,7 @@
                         android:id="@+id/bermasalah"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_desc_ps"
+                        android:layout_below="@id/tv_desc_course"
                         android:layout_marginTop="11dp"
                         android:fontFamily="@font/inter_regular"
                         android:text="@string/module_bermasalah"
@@ -113,7 +114,7 @@
                         android:id="@+id/laporkan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tv_desc_ps"
+                        android:layout_below="@id/tv_desc_course"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="11dp"
                         android:layout_toRightOf="@id/bermasalah"
@@ -126,7 +127,7 @@
                         android:id="@+id/img_report"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_desc_ps"
+                        android:layout_below="@+id/tv_desc_course"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="11dp"
                         android:layout_toRightOf="@+id/laporkan"
@@ -139,10 +140,40 @@
                 android:id="@+id/rv_personal_growth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rv_description"
-                android:layout_marginTop="62dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_description"
+                android:layout_marginTop="30dp"
                 tools:listitem="@layout/item_topik" />
-        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_no_modul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rv_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:tint="@color/grey"
+                    android:src="@drawable/ic_kecewa"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:text="@string/no_modul"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 

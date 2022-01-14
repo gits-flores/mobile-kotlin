@@ -9,10 +9,18 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
+import com.example.course_online.data.topik.ModulesItem
+import com.example.course_online.data.topik.ResponseListTopik
 import com.example.course_online.ui.PelajariTopik.PelajariTopikActivity
 
-class AdapterPersonalGrowth(private var listPersonal: ArrayList<PersonalGrowth>) :
+class AdapterPersonalGrowth(private var listPersonal: ArrayList<ModulesItem>) :
     RecyclerView.Adapter<AdapterPersonalGrowth.myViewHolder>() {
+
+    fun setData(result: List<ModulesItem>){
+        listPersonal.clear()
+        listPersonal.addAll(result)
+        notifyDataSetChanged()
+    }
 
     class myViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val layout : RelativeLayout = itemView.findViewById(R.id.rv_item_pg)
@@ -31,19 +39,23 @@ class AdapterPersonalGrowth(private var listPersonal: ArrayList<PersonalGrowth>)
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val item = listPersonal[position]
-        holder.image.setImageResource(item.ImageMateri)
-        holder.imageSave.setImageResource(item.ImageSave)
-        holder.judul.text = item.Judul
-        holder.tim.text = item.Tim
-        holder.status.text = item.Status
+
+        holder.image.setImageResource(R.drawable.ic_pg_one)
+        holder.judul.text = item.title
+        holder.tim.text = "Tim Personalities"
+        holder.status.text = "Mulai"
 
         holder.layout.setOnClickListener {
             val intent = Intent(holder.itemView.context, PelajariTopikActivity::class.java)
+                .putExtra("idCourse", item.courseId)
+                .putExtra("idModul", item.iD)
             holder.itemView.context.startActivity(intent)
         }
 
         holder.status.setOnClickListener {
             val intent = Intent(holder.itemView.context, PelajariTopikActivity::class.java)
+                .putExtra("idCourse", item.courseId)
+                .putExtra("idModul", item.iD)
             holder.itemView.context.startActivity(intent)
         }
     }

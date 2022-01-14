@@ -29,59 +29,29 @@
 
                 <ImageView
                     android:id="@+id/iv_ilustrasiTopik"
-                    android:layout_width="250dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:paddingHorizontal="10dp"
                     android:src="@drawable/blank_image"/>
 
                 <TextView
-                    android:id="@+id/tv_isiTopik"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:text="Ini Teks ukuran 12"
-                    android:fontFamily="@font/inter_medium"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    android:textSize="12sp"/>
-
-                <TextView
-                    android:id="@+id/tv_isiTopik2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:text="Ini Teks ukuran 14"
-                    android:fontFamily="@font/inter_medium"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/tv_isiTopik3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:text="Ini Teks ukuran 18"
-                    android:fontFamily="@font/inter_medium"
-                    android:textColor="@color/black"
-                    android:justificationMode="inter_word"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:id="@+id/tv_isiTopik4"
+                    android:id="@+id/tv_judulTopik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ini Teks ukuran 24"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/inter_medium"
                     android:textColor="@color/black"
+                    android:gravity="center"
                     android:justificationMode="inter_word"
                     android:textSize="24sp"/>
 
                 <TextView
-                    android:id="@+id/tv_isiTopik5"
+                    android:id="@+id/tv_isiTopik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="15dp"
                     android:text="@string/dummyTextParagraph"
                     android:textSize="18sp"

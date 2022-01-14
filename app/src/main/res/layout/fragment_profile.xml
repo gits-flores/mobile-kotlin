@@ -41,11 +41,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:lines="1"
-                    android:ellipsize="end"
                     android:layout_toRightOf="@id/iv_profile"
+                    android:ellipsize="end"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Deni Alfian Bouk"
+                    android:lines="1"
+                    android:text="Your Name Here"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -61,55 +61,69 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/inter_regular"
                     android:lines="2"
-                    android:text="Jalan Kerta Dalem XII No.3"
+                    android:text="Your Address here"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_emailUser"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/info_user"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:drawableStart="@drawable/ic_mail"
-                android:drawablePadding="8dp"
-                android:text="denialvarado55@gmail.com"
-                android:textColor="@color/black"
-                android:fontFamily="@font/inter_regular"
+                android:layout_marginEnd="115dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/btn_editInfoUser"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rl_userInfo"/>
+                app:layout_constraintTop_toBottomOf="@+id/rl_userInfo">
 
-            <TextView
-                android:id="@+id/tv_noTelpUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:drawableStart="@drawable/ic_telp"
-                android:drawablePadding="8dp"
-                android:text="Nomer telepon belum disimpan"
-                android:textColor="@color/black"
-                android:fontFamily="@font/inter_regular"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_emailUser"/>
+                <TextView
+                    android:id="@+id/tv_emailUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="45dp"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="email@gmail.com"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/tv_noTelpUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableStart="@drawable/ic_telp"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="XXX-XXX-XXX"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+
 
             <Button
                 android:id="@+id/btn_editInfoUser"
                 android:layout_width="100dp"
                 android:layout_height="44dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/button_outline_bg"
-                app:backgroundTint="@null"
-                app:layout_constraintBottom_toTopOf="@+id/btn_setting_bahasa"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rl_userInfo"
-                android:text="Edit"
+                android:drawableLeft="@drawable/ic_edit"
                 android:fontFamily="@font/inter_bold"
+                android:text="Edit"
                 android:textAllCaps="false"
                 android:textColor="@color/blue_lagoon"
-                android:drawableLeft="@drawable/ic_edit"
-                app:drawableTintMode="@null"/>
+                app:backgroundTint="@null"
+                app:drawableTintMode="@null"
+                app:layout_constraintBottom_toTopOf="@+id/btn_setting_bahasa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_userInfo" />
 
             <RelativeLayout
                 android:id="@+id/btn_setting_bahasa"
@@ -121,7 +135,7 @@
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_noTelpUser">
+                app:layout_constraintTop_toBottomOf="@+id/info_user">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/iv_asalBahasa"

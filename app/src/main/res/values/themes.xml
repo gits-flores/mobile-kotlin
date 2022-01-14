@@ -16,12 +16,20 @@
         <!-- Enable window content transition -->
         <item name="android:windowActivityTransitions">true</item>
 
+        <!-- semi trnasparant status bar -->
+
     </style>
 
     <style name="Divider">
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">1dp</item>
         <item name="background">@android:attr/listDivider</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorAccent">#FF4081</item>
     </style>
 
 </resources>

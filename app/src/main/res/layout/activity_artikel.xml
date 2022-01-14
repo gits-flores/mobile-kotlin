@@ -29,12 +29,13 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
                 android:fontFamily="@font/inter_medium"
-                android:text="@string/personal_growth"
+                android:text="Artikel"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                app:layout_constraintEnd_toStartOf="@+id/iv_searh"
+                app:layout_constraintLeft_toRightOf="@id/iv_back"
                 app:layout_constraintStart_toEndOf="@+id/iv_back"
                 app:layout_constraintTop_toTopOf="@+id/iv_back"
                 app:layout_constraintVertical_bias="1.0" />
@@ -138,8 +139,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_description"
-                android:layout_marginTop="62dp"
-                tools:listitem="@layout/item_artikel"/>
+                android:layout_marginTop="30dp"
+                tools:listitem="@layout/item_artikel" />
 
         </LinearLayout>
     </ScrollView>

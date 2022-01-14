@@ -3,6 +3,7 @@ package com.example.course_online.network
 import com.example.course_online.data.*
 import com.example.course_online.data.artikel.DataListArtikel
 import com.example.course_online.data.artikel.ResponseDetailArtikel
+import com.example.course_online.data.topik.ResponseListTopik
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -55,4 +56,15 @@ interface ApiEndPoint {
         @Header("Authorization") token: String,
         @Path("user_id") user_id: String,
     ): Call<List<DataSaveArticle>>
+
+    @GET("courses")
+    fun getListCourse(
+        @Header("Authorization") token: String,
+    ): Call<List<ResponseListTopik>>
+
+    @GET("courses/{id}")
+    fun getListTopik(
+        @Header("Authorization") token: String,
+        @Path("id") id_Course : Int
+    ): Call<ResponseListTopik>
  }

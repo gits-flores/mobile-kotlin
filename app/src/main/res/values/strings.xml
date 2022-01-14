@@ -10,7 +10,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="artikel">Artikel</string>
     <string name="dapatkan_saran_dan_tip_tentang_segala_hal_mulai_dari_kecerdasan_emosional_hingga_menciptakan_hubungan_yang_memuaskan">Dapatkan saran dan tip tentang segala hal mulai dari kecerdasan emosional hingga menciptakan hubungan yang memuaskan.</string>
-    <string name="artikel_bermasalah">Artikel Bermasalah</string>
+    <string name="artikel_bermasalah">Artikel Bermasalah?</string>
+    <string name="our_motto">Menembus rintangan untuk belajar dan menemukan potensi tersembunyi anda</string>
+    <string name="term_of_service">Dengan mendaftar, anda menyetujui <font color='#2a9df4'><![CDATA[Syarat & Ketentuan]]></font> dan <font color='#2a9df4'>Kebijakan Privasi</font> yang berlaku</string>
+    <string name="no_modul">Oops!!\nSaat ini modul masih belum tersedia...</string>
 
     <string-array name="Gender">
         <item>Laki-laki</item>

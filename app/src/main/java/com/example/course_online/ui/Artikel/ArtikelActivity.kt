@@ -13,6 +13,7 @@ import com.example.course_online.data.artikel.DataListArtikel
 //import com.example.course_online.data.artikel.DataListArtikel
 import com.example.course_online.network.ApiClient
 import com.example.course_online.ui.DetailArtikelActivity
+import kotlinx.android.synthetic.main.activity_artikel.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +31,16 @@ class ArtikelActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.rv_artikel)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
         getArtikel()
+        backBtn()
+
+    }
+
+    private fun backBtn() {
+        iv_back.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun getArtikel() {

@@ -56,31 +56,43 @@
         android:clipToPadding="false"
         android:padding="20dp"/>
 
+    <LinearLayout
+        android:id="@+id/bg_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80424242"
+        android:visibility="gone"
+        android:orientation="vertical"/>
+
     <SlidingDrawer
         android:id="@+id/drawer"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tb_topik"
-        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
         android:content="@id/content_drawer"
         android:handle="@id/handler"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/handler"
             android:layout_width="40dp"
             android:layout_height="70dp"
+            android:translationY="30dp"
             android:background="@drawable/btn_bg_white"
+            android:rotation="270"
+            android:paddingLeft="18dp"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            android:src="@drawable/ic_logout" />
+            android:src="@drawable/ic_forward" />
 
         <LinearLayout
             android:id="@+id/content_drawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
 
             <Button
                 android:id="@+id/btn_selesaiPelajari"
@@ -88,8 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/button_bg"
-                android:backgroundTintMode="@null"
                 android:backgroundTint="@color/blue_lagoon"
+                android:backgroundTintMode="@null"
                 android:fontFamily="@font/inter_medium"
                 android:text="Selesai Pelajari"
                 android:textColor="@color/white"
@@ -98,5 +110,21 @@
         </LinearLayout>
 
     </SlidingDrawer>
+
+    <Button
+        android:id="@+id/btn_selesaiPelajariTopik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/blue_lagoon"
+        android:backgroundTintMode="@null"
+        android:fontFamily="@font/inter_medium"
+        android:text="Selesai Pelajari"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
 
 </RelativeLayout>

@@ -28,7 +28,19 @@ class DetailArtikelActivity : AppCompatActivity() {
 
         Log.i("ID ARTIKEL", idArtikelDetail.toString())
 
+        backButton()
+
         getDetailArtikel(idArtikelDetail)
+    }
+
+    private fun backButton() {
+        ic_back.setOnClickListener {
+            onBackPressed()
+        }
+
+        btn_back.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun getDetailArtikel(idArtikel : Int) {
@@ -41,12 +53,17 @@ class DetailArtikelActivity : AppCompatActivity() {
                     if (response.isSuccessful){
                         val artikel = response.body()
                         val date = artikel!!.createdAt!!.substringBefore("T")
-                        val thumbnailUri = "echo.alghiffaryenterprise.id/uploads/{${artikel!!.thumbnail}}"
-                        Picasso.get().load(thumbnailUri)
+                        val thumbnailUri = "https://echo.alghiffaryenterprise.id/uploads/${artikel!!.thumbnail}"
+                        Log.i("URL Thumbnail : ", thumbnailUri)
+
+                        Picasso.get()
+                            .load(thumbnailUri)
                             .fit()
                             .placeholder(R.drawable.ic_detail_artikel)
                             .into(ivDetailArtikel)
+
                         tv_judulDetailArtikel.text = artikel.title
+                        tb_title.text = artikel.title
                         tv_author.text = artikel.author!!.name
                         tvTime.text = date
                         tvIsiArtikel.text = artikel.content
@@ -61,7 +78,6 @@ class DetailArtikelActivity : AppCompatActivity() {
                     ).show()
                     Log.e("ERROR ARTIKEL", t.toString())
                 }
-
             })
     }
 

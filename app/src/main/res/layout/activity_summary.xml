@@ -17,7 +17,7 @@
             android:layout_height="?actionBarSize">
 
             <ImageView
-                android:id="@+id/ic_back"
+                android:id="@+id/ic_backSummary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_back_white"
@@ -29,18 +29,15 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="136dp"
-                android:layout_toRightOf="@id/ic_back"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="@font/inter_medium"
                 android:text="Rangkuman Topik"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ic_back"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_backSummary"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/ic_back"
-                app:layout_constraintTop_toTopOf="@+id/ic_back"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ic_backSummary"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -69,6 +66,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/tv_penulisTopik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_titleNext"
@@ -82,7 +80,7 @@
 
 
         <Button
-            android:id="@+id/btn_pelajari"
+            android:id="@+id/btn_ulangiTopik"
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
@@ -119,7 +117,7 @@
             android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/ivNotes"
             android:fontFamily="@font/inter_semibold"
-            android:text="Deni Alfian"
+            android:text="Tim Personality"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -132,6 +130,7 @@
             android:src="@drawable/ic_tag" />
 
         <TextView
+            android:id="@+id/tv_tagCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

@@ -26,8 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="75dp"
             android:fontFamily="@font/inter_regular"
-            android:text="@string/dummy_text"
+            android:text="@string/our_motto"
             android:transitionName="descTransitions"
             android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
@@ -186,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_regular"
-                android:text="Don't have an account? " />
+                android:text="Belum punya akun? " />
 
             <TextView
                 android:id="@+id/signUp_txt"
@@ -195,7 +196,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/inter_regular"
-                android:text=" Sign Up"
+                android:text=" Daftar disini"
                 android:textColor="#2a9df4" />
         </LinearLayout>
 
@@ -204,7 +205,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/dummy_text"
+            android:layout_marginHorizontal="50dp"
+            android:transitionName="kebijakanTransitions"
+            android:text="@string/term_of_service"
             android:textAlignment="center"
             android:fontFamily="@font/inter_regular"
             app:layout_constraintTop_toBottomOf="@+id/tosignUp_layout" />

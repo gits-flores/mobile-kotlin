@@ -37,8 +37,7 @@ class SignUpActivity : AppCompatActivity() {
         descApp = findViewById(R.id.tv_descApp)
 
         loginBtn.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
+            toLogin()
         }
 
         registerBtn.setOnClickListener {
@@ -54,6 +53,7 @@ class SignUpActivity : AppCompatActivity() {
                     if (response.isSuccessful){
                         val response: ResponseRegister? = response.body()
                         Toast.makeText(this@SignUpActivity, "Success $response", Toast.LENGTH_SHORT).show()
+                        toLogin()
                     }
                     else{
                         Toast.makeText(this@SignUpActivity, "Failed $response", Toast.LENGTH_SHORT).show()
@@ -67,5 +67,9 @@ class SignUpActivity : AppCompatActivity() {
             })
         }
 
+    }
+
+    private fun toLogin(){
+        onBackPressed()
     }
 }
