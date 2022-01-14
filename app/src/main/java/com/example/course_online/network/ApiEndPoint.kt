@@ -65,6 +65,13 @@ interface ApiEndPoint {
     @GET("courses/{id}")
     fun getListTopik(
         @Header("Authorization") token: String,
-        @Path("id") id_Course : Int
+        @Path("id") id_Course: Int
     ): Call<ResponseListTopik>
- }
+
+    @GET("cek-article-user/{user_id}/{article_id}")
+    fun cekSaveArticle(
+        @Header("Authorization") token: String,
+        @Path("user_id") user_id: String,
+        @Path("article_id") article_id: Int?
+    ): Call<List<ResponseCekArticle>>
+}

@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.course_online.R
 import com.example.course_online.data.PrefsManagers
+import com.example.course_online.data.ResponseCekArticle
 import com.example.course_online.data.ResponseSaveArticle
 import com.example.course_online.data.artikel.DataListArtikel
 import com.example.course_online.network.ApiClient
@@ -16,14 +17,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
-import android.util.Base64
 import com.example.course_online.data.ResponseUnsaveArticle
 
 class AdapterArtikel(
     private var listArtikel: ArrayList<DataListArtikel>, var prefsManagers: PrefsManagers,
 ) :
     RecyclerView.Adapter<AdapterArtikel.myViewHolder>() {
-
     fun setData(result: List<DataListArtikel>) {
         listArtikel.clear()
         listArtikel.addAll(result)
@@ -35,6 +34,7 @@ class AdapterArtikel(
         val read_artikel: TextView = itemView.findViewById(R.id.tv_read_artikel)
         val image: ImageView = itemView.findViewById(R.id.img_artikel)
         val imageSave: CheckBox = itemView.findViewById(R.id.cb_save_article)
+        val imageSave2: CheckBox = itemView.findViewById(R.id.cb_save_article2)
         val judul: TextView = itemView.findViewById(R.id.tv_judul_artikel)
         val tim: TextView = itemView.findViewById(R.id.tv_author)
 
@@ -62,7 +62,7 @@ class AdapterArtikel(
                 if (isChecked) {
                     ApiClient.endPoint.saveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "3",
+                        prefsManagers.prefsData,
                         idArtikel
                     ).enqueue(object : Callback<ResponseSaveArticle> {
                         override fun onResponse(
@@ -89,11 +89,10 @@ class AdapterArtikel(
                         }
 
                     })
-
                 } else {
                     ApiClient.endPoint.unSaveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "3",
+                        prefsManagers.prefsData,
                         idArtikel!!
                     )
                         .enqueue(object : Callback<ResponseUnsaveArticle> {
@@ -125,7 +124,70 @@ class AdapterArtikel(
 
                         })
                 }
+
             }
+            ApiClient.endPoint.cekSaveArticle(
+                token = "Bearer ${prefsManagers.prefsToken}",
+                prefsManagers.prefsData,
+                idArtikel
+            ).enqueue(object : Callback<List<ResponseCekArticle>> {
+                override fun onResponse(
+                    call: Call<List<ResponseCekArticle>>,
+                    response: Response<List<ResponseCekArticle>>
+                ) {
+                    if (response.body()!!.isNotEmpty()) {
+                        imageSave2.isChecked = true
+                        imageSave2.visibility = View.VISIBLE
+                        imageSave2.setOnClickListener {
+                            ApiClient.endPoint.unSaveArticle(
+                                token = "Bearer ${prefsManagers.prefsToken}",
+                                prefsManagers.prefsData,
+                                idArtikel!!
+                            )
+                                .enqueue(object : Callback<ResponseUnsaveArticle> {
+                                    override fun onResponse(
+                                        call: Call<ResponseUnsaveArticle>,
+                                        response: Response<ResponseUnsaveArticle>
+                                    ) {
+                                        if (response.isSuccessful) {
+                                            Toast.makeText(
+                                                itemView.context,
+                                                "Simpan Artikel di hapus",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        } else {
+                                            Toast.makeText(
+                                                itemView.context,
+                                                "Di hapus Gagal",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    }
+
+                                    override fun onFailure(
+                                        call: Call<ResponseUnsaveArticle>,
+                                        t: Throwable
+                                    ) {
+                                        Toast.makeText(itemView.context, "$t", Toast.LENGTH_SHORT)
+                                            .show()
+                                    }
+
+                                })
+
+                        }
+                    } else {
+                        imageSave2.visibility = View.GONE
+                        imageSave2.isChecked = false
+
+
+                    }
+                }
+
+                override fun onFailure(call: Call<List<ResponseCekArticle>>, t: Throwable) {
+                    Toast.makeText(itemView.context, "$t", Toast.LENGTH_SHORT).show()
+                }
+
+            })
         }
     }
 
@@ -140,4 +202,5 @@ class AdapterArtikel(
     }
 
     override fun getItemCount() = listArtikel.size
+
 }

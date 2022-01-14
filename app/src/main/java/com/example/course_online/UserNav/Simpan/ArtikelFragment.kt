@@ -48,7 +48,10 @@ class ArtikelFragment : Fragment() {
         val adapterArtikelSave = AdapterArtikel(arrayListOf(), prefsManagers)
         recyclerView.adapter = adapterArtikelSave
 
-        ApiClient.endPoint.getSaveArticles(token = "Bearer ${prefsManagers.prefsToken}", "3")
+        ApiClient.endPoint.getSaveArticles(
+            token = "Bearer ${prefsManagers.prefsToken}",
+            prefsManagers.prefsData
+        )
             .enqueue(object : Callback<List<DataSaveArticle>> {
                 override fun onResponse(
                     call: Call<List<DataSaveArticle>>,

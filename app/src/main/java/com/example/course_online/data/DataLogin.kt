@@ -3,6 +3,7 @@ package com.example.course_online.data
 import com.google.gson.annotations.SerializedName
 
 data class DataLogin(
+    @SerializedName("data") val data: String,
     @SerializedName("token") val token: String,
     @SerializedName("code") val status: String,
     @SerializedName("message") val message: String,

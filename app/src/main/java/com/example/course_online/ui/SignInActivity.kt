@@ -4,6 +4,7 @@ import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.util.Pair
 import android.widget.*
@@ -18,6 +19,8 @@ import okhttp3.internal.trimSubstring
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.UnsupportedEncodingException
+import java.lang.Exception
 
 class SignInActivity : AppCompatActivity() {
 
@@ -45,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun isLogin() {
-        if (prefsManagers.prefsIsLogin){
+        if (prefsManagers.prefsIsLogin) {
             Toast.makeText(
                 this@SignInActivity,
                 prefsManagers.prefsMessage,
@@ -118,10 +121,31 @@ class SignInActivity : AppCompatActivity() {
 
     fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
         prefsManagers.prefsIsLogin = true
+        prefsManagers.prefsData = responseLog.data
         prefsManagers.prefsToken = responseLog.token
         prefsManagers.prefsMessage = responseLog.message
         prefsManagers.prefsName = prefsManagers.prefsMessage.replace("Selamat Datang ", "")
         prefsManagers.prefsEmail = signIn_email.text.toString()
+
 //        Log.i("Token", responseLog.token)
+    }
+
+    object JWTUtils {
+        @Throws(Exception::class)
+        fun decoded(JWTEncoded: String) {
+            try {
+                val split = JWTEncoded.split(".".toRegex()).toTypedArray()
+                Log.d("JWT_DECODED", "Header: " + getJson(split[0]))
+                Log.d("JWT_DECODED", "Body: " + getJson(split[4]))
+            } catch (e: UnsupportedEncodingException) {
+                //Error
+            }
+        }
+
+        @Throws(UnsupportedEncodingException::class)
+        private fun getJson(strEncoded: String): String {
+            val decodedBytes: ByteArray = Base64.decode(strEncoded, Base64.URL_SAFE)
+            return String(decodedBytes)
+        }
     }
 }

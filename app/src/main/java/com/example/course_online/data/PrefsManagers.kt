@@ -17,6 +17,7 @@ class PrefsManagers(context: Context) : Krate {
     private val PREFS_STATUS = "prefs_status"
     private val PREFS_MESSAGE = "prefs_message"
     private val PREFS_EMAIL = "prefs_email"
+    private val PREFS_DATA = "prefs_data"
 
     override val sharedPreferences: SharedPreferences =
         context.applicationContext.getSharedPreferences("course-online", Context.MODE_PRIVATE)
@@ -29,6 +30,7 @@ class PrefsManagers(context: Context) : Krate {
     var prefsStatus by stringPref(PREFS_STATUS, "")
     var prefsMessage by stringPref(PREFS_MESSAGE, "")
     var prefsEmail by stringPref(PREFS_EMAIL, "")
+    var prefsData by stringPref(PREFS_DATA, "")
 
     fun doLogout() {
         sharedPreferences.edit().clear().apply()

@@ -40,7 +40,7 @@ class AdapterArtikel(
             val idArtikel = get.article!!.iDarticle
 //            val thumbnailImageUrl = "echo.alghiffaryenterprise.id/uploads/{${get.thumbnail}}"
             judul.text = get.article!!.title
-            tim.text = get.user!!.name
+            tim.text = get.article.user!!.name
             image.setImageResource(R.drawable.ic_poll)
 
             rv_artikel.setOnClickListener {
@@ -56,11 +56,12 @@ class AdapterArtikel(
             }
 
             prefsManagers = PrefsManagers(itemView.context)
+            imageSave.isChecked = true
             imageSave.setOnCheckedChangeListener { c, isChecked ->
                 if (isChecked) {
                     ApiClient.endPoint.saveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "3",
+                        prefsManagers.prefsData,
                         idArtikel
                     ).enqueue(object : Callback<ResponseSaveArticle> {
                         override fun onResponse(
@@ -91,7 +92,7 @@ class AdapterArtikel(
                 } else {
                     ApiClient.endPoint.unSaveArticle(
                         token = "Bearer ${prefsManagers.prefsToken}",
-                        "3",
+                        prefsManagers.prefsData,
                         idArtikel!!
                     )
                         .enqueue(object : Callback<ResponseUnsaveArticle> {
