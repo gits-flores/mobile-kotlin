@@ -15,6 +15,7 @@ import com.example.course_online.data.PrefsManagers
 import com.example.course_online.ui.Profile.AboutAppsActivity
 import com.example.course_online.ui.Profile.EditProfileActivity
 import com.example.course_online.ui.SignInActivity
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {
@@ -33,8 +34,14 @@ class ProfileFragment : Fragment() {
 
         prefsManagers = PrefsManagers(container!!.context)
         setBtn(view)
+        setProfile(view)
 
         return view
+    }
+
+    private fun setProfile(view: View) {
+        view.tv_username.setText(prefsManagers.prefsName)
+        view.tv_emailUser.setText(prefsManagers.prefsEmail)
     }
 
 

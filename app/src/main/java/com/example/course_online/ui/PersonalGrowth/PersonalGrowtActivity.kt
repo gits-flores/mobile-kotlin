@@ -36,6 +36,10 @@ class PersonalGrowtActivity : AppCompatActivity() {
 
         getListTopik(idCourse)
 
+        ic_back.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun getListTopik(id: Int) {

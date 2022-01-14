@@ -52,11 +52,11 @@ class SignUpActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful){
                         val response: ResponseRegister? = response.body()
-                        Toast.makeText(this@SignUpActivity, "Success $response", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignUpActivity, "Berhasil Terdaftar!", Toast.LENGTH_SHORT).show()
                         toLogin()
                     }
                     else{
-                        Toast.makeText(this@SignUpActivity, "Failed $response", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignUpActivity, "Gagal Terdaftar!\nCoba sekali lagi", Toast.LENGTH_SHORT).show()
                     }
                 }
 

@@ -14,6 +14,7 @@ import com.example.course_online.data.PrefsManagers
 import com.example.course_online.network.ApiClient
 import com.example.course_online.ui.PersonalGrowth.PersonalGrowtActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import okhttp3.internal.trimSubstring
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
         if (prefsManagers.prefsIsLogin){
             Toast.makeText(
                 this@SignInActivity,
-                prefsManagers.prefsName,
+                prefsManagers.prefsMessage,
                 Toast.LENGTH_SHORT
             ).show()
             startActivity(Intent(this@SignInActivity, MainActivity::class.java))
@@ -76,13 +77,13 @@ class SignInActivity : AppCompatActivity() {
                     ) {
                         if (response.isSuccessful) {
                             val response: DataLogin? = response.body()
+                            setPrefs(prefsManagers, response!!)
                             Toast.makeText(
                                 this@SignInActivity,
-                                "Login Succes",
+                                prefsManagers.prefsMessage,
                                 Toast.LENGTH_SHORT
                             ).show()
                             startActivity(Intent(this@SignInActivity, MainActivity::class.java))
-                            setPrefs(prefsManagers, response!!)
                             finish()
                         } else {
                             Toast.makeText(
@@ -118,8 +119,9 @@ class SignInActivity : AppCompatActivity() {
     fun setPrefs(prefsManagers: PrefsManagers, responseLog: DataLogin) {
         prefsManagers.prefsIsLogin = true
         prefsManagers.prefsToken = responseLog.token
-        prefsManagers.prefsName = responseLog.message
-
+        prefsManagers.prefsMessage = responseLog.message
+        prefsManagers.prefsName = prefsManagers.prefsMessage.replace("Selamat Datang ", "")
+        prefsManagers.prefsEmail = signIn_email.text.toString()
 //        Log.i("Token", responseLog.token)
     }
 }
