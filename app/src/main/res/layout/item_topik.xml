@@ -42,14 +42,14 @@
             android:textColor="#5D5F61"
             android:textSize="12sp" />
 
-        <ImageView
+        <CheckBox
             android:id="@+id/img_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_materi"
-            android:layout_marginTop="33dp"
-            android:clickable="true"
-            android:src="@drawable/ic_unsave" />
+            android:layout_marginTop="30dp"
+            android:checked="true"
+            android:button="@drawable/ic_save_article" />
 
         <TextView
             android:id="@+id/tv_status_module"

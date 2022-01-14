@@ -15,9 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_img_materi"
+            android:backgroundTint="@color/dark_moderate_green"
             android:padding="11dp"
-            android:src="@drawable/ic_pg_one"
-            android:backgroundTint="@color/dark_moderate_green"/>
+            android:src="@drawable/ic_pg_one" />
 
         <TextView
             android:id="@+id/tv_judul_survey"
@@ -42,14 +42,14 @@
             android:textColor="#5D5F61"
             android:textSize="12sp" />
 
-        <ImageView
+        <CheckBox
             android:id="@+id/img_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_survey"
-            android:layout_marginTop="33dp"
-            android:backgroundTint="@color/dark_moderate_green"
-            android:src="@drawable/ic_unsave" />
+            android:layout_marginTop="30dp"
+            android:button="@drawable/ic_save_article"
+            android:checked="true" />
 
         <TextView
             android:id="@+id/tv_coba"

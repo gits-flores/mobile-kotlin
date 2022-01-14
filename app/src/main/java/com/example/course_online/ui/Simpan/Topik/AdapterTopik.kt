@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -17,14 +18,13 @@ class AdapterTopik(private var  listSavedTopik: ArrayList<Topik>)
     class myViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val layout: RelativeLayout = itemView.findViewById(R.id.rv_item_pg)
         val image: ImageView = itemView.findViewById(R.id.img_materi)
-        val imageSave: ImageView = itemView.findViewById(R.id.img_save)
+        val imageSave: CheckBox = itemView.findViewById(R.id.img_save)
         val judul: TextView = itemView.findViewById(R.id.tv_judul_module)
         val tim: TextView = itemView.findViewById(R.id.tv_tim_module)
         var status: TextView = itemView.findViewById(R.id.tv_status_module)
 
         fun bind(get: Topik) {
             image.setImageResource(get.ImageMateri)
-            imageSave.setImageResource(get.ImageSave)
             judul.text = get.Judul
             tim.text = get.Tim
             status.text = get.Status

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +18,10 @@ class AdapterSurvey (private var  listSavedSurvey: ArrayList<Survey>)
         val judul: TextView = itemView.findViewById(R.id.tv_judul_survey)
         val author: TextView = itemView.findViewById(R.id.tv_author)
         val CobaBtn: TextView = itemView.findViewById(R.id.tv_coba)
-        val imageSave: ImageView = itemView.findViewById(R.id.img_save)
+        val imageSave: CheckBox = itemView.findViewById(R.id.img_save)
 
         fun bind(get: Survey) {
             image.setImageResource(get.ImageSurvey)
-            imageSave.setImageResource(get.ImageSave)
             judul.text = get.Judul
             author.text = get.Author
             CobaBtn.setOnClickListener {
